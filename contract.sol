@@ -9,7 +9,7 @@ uint public minDonation; // minumum donation amount
 uint public totDonators; // total # of donators
 address public admin;  
 
-struct Request { // struct associated with donation request 
+struct Request { // struct associated with donation money spending requests
     uint amount; 
     address reciever;
     string description;
@@ -27,12 +27,12 @@ constructor (uint _deadline, uint _minContribution, uint _goal) public {
     admin = msg.sender; 
 }
 
-modifier adminOnlyCheck() {
+modifier adminOnlyCheck() { // checks if the sender is the admin
     require(msg.sender == admin);
     _;
 }
 
-modifier goalReachedCheck() {
+modifier goalReachedCheck() { // checks if the donation goal is reached
     require(raisedAmount >= goal);
     _;
 }
@@ -52,19 +52,19 @@ function donate() public payable { // actual donate function
     }
 }
 
-function refund() public {
-    // FILL ME IN!
+function refund() public { // ARYAN
+    // refunds donors who actually donated
 }
 
-function createSpendingRequest(uint _value, address _recipient, string _description) public adminOnlyCheck goalReachedCheck {
-    // FILL ME IN!
+function createSpendingRequest(uint _value, address _recipient, string _description) public adminOnlyCheck goalReachedCheck { // ARYAN
+    // charity creates a spending request
 }
 
-function voteRequest(uint index) public goalReached {
-    // FILL ME IN!
+function voteRequest(uint index) public goalReached { // BEN
+    // utilizes requests array to allow users to vote
 }
 
-function makePayment(uint _index) public adminOnlyCheck goalReachedCheck {
-    // FILL ME IN!
+function makePayment(uint _index) public adminOnlyCheck goalReachedCheck { // BEN
+    // uses the requests array and if more than 50% of donors approve the money transfer request then it is sent to the associated recipient
 }
 
