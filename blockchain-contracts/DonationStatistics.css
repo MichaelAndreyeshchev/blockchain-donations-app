@@ -1,0 +1,52 @@
+body
+{
+  background:lightblue;
+}
+
+.yourStatistics
+{
+  font-size:50px;
+  margin-left:180px;
+  color:darkgrey;
+}
+
+.leaderboard
+{
+  background:white;
+  position:relative;
+  height:400px;
+  width:300px;
+  margin-left:1000px;
+  border: 10px ridge darkgrey;
+  top:-419px;
+}
+
+.leaderboardList
+{
+  font-family: timesnewroman;
+  line-height:2;
+  padding-left:50px;
+}
+
+.leaderboard h4
+{
+  padding-left:60px;
+  font-size:20px;
+}
+
+.statsBox
+{
+  background:white;
+  height:400px;
+  width:800px;
+  margin-left:100px;
+  border:ridge darkgrey 10px;
+}
+
+div h2
+{
+  position:relative;
+  padding-left:50px;
+  margin-top:40px;
+  font-size: 30px;
+}

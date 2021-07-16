@@ -1,0 +1,26 @@
+body
+{
+  background:lightblue;
+}
+
+.yourDonationTracker
+{
+  color:darkgrey;
+  font-size: 50px;
+  margin-left:240px;
+}
+
+.mapBox
+{
+  background:white;
+  height:600px;
+  width:1000px;
+  margin-left:215px;
+  margin-bottom:100px;
+}
+
+.mapBox:hover
+{
+  background:darkgrey;
+  cursor:pointer;
+}
