@@ -1,7 +1,9 @@
+import NavCSS from './Navigation.module.css';
+
 const Navigation = () => {
   return (
     <nav>
-      <ul>
+      <ul className={NavCSS.ul}>
         <li>
           <a href="">Home</a>
         </li>
@@ -11,7 +13,7 @@ const Navigation = () => {
         <li>
           <a href="">Donations</a>
         </li>
-        <li style="float:right">
+        <li style={{ float: 'right' }}>
           <a href="">Login/Sign-in</a>
         </li>
       </ul>
