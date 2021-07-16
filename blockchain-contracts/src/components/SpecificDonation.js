@@ -1,21 +1,22 @@
 import React from 'react';
+import style from './SpecificDonation.module.css'
 
 const SpecificDonation = () => {
   return (
-    <div class='container'>
-      <div class='wrapper'>
-        <div class='image_container'>
+    <div className='container'>
+      <div className='wrapper'>
+        <div className={style.imageContainer}>
           <img
             src='https://dummyimage.com/2000x2000/000/fff&text=image'
             alt='Image Of Charity'
           />
         </div>
-        <div class='description_container'>
+        <div className={style.descriptionContainer}>
           <h1>Name of donation</h1>
           <p>
             by some charity (<span>verified</span>)
           </p>
-          <div class='tag_container'>
+          <div className={style.tagContainer}>
             <span>Technology</span> <span>Community</span> <span>Research</span>
           </div>
           <p>
@@ -27,13 +28,15 @@ const SpecificDonation = () => {
           </p>
         </div>
 
-        <div class='share_donate_container'>
-          <div class='donate_container'>
+        <h1>Pictures of charity using the money?</h1>
+
+        <div className={style.shareDonateContainer}>
+          <div className={style.donateContainer}>
             <h2>Be a Donator today!</h2>
             <h2>Donators: 3</h2>
             <button>DONATE</button>
           </div>
-          <div class='share_container'>
+          <div className={style.shareContainer}>
             <h2>Share this donation today!</h2>
             <span>Follow icon?</span>
             <span>Love icon</span>
@@ -41,14 +44,14 @@ const SpecificDonation = () => {
           </div>
         </div>
 
-        <div class='funds_container'>
-          <div class='display_funds'>
+        <div className={style.fundsContainer}>
+          <div className={style.displayFunds}>
             <h2>Total Money Raised:</h2>
-            <div class='money_raised'>
+            <div className={style.moneyRaised}>
               <h2>$2000</h2>
               <h2>0.9 ETH</h2>
             </div>
-            <div class='donation_address'>
+            <div className={style.donationAddress}>
               <p>Donation address:</p>
               <p>0x634977e11C823a436e587C1a1Eca959588C64287</p>
             </div>
@@ -86,12 +89,6 @@ const SpecificDonation = () => {
             */}
         </div>
       </div>
-
-      <script
-        src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js'
-        integrity='sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM'
-        crossorigin='anonymous'
-      ></script>
     </div>
   );
 };
