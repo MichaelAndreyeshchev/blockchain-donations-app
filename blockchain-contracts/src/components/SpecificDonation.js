@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './SpecificDonation.module.css'
+import style from './SpecificDonation.module.css';
 
 const SpecificDonation = () => {
   return (
@@ -57,36 +57,36 @@ const SpecificDonation = () => {
             </div>
           </div>
           <h3>Search bar?</h3>
-          {/* <table class="table"> 
-                    <thead>
-                    <tr>
-                        <th scope="col">DATE</th>
-                        <th scope="col">DONOR</th>
-                        <th scope="col">CURRENCY</th>
-                        <th scope="col">AMOUNT</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row">Jul 5, 2021</th>
-                        <td>0x67b7628d1a734420911cd10a1a6ba57fd00f90ee</td>
-                        <td>HNY</td>
-                        <td>0.2</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Jun 28, 2021</th>
-                        <td>0x67b7628d1a734420911cd10a1a6ba57fd00f90ee</td>
-                        <td>XDAI</td>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Jun 22, 2021</th>
-                        <td>0x67b7628d1a734420911cd10a1a6ba57fd00f90ee</td>
-                        <td>HNY</td>
-                        <td>0.5</td>
-                    </tbody>
-                </table>
-            */}
+          <table class='table'>
+            <thead>
+              <tr>
+                <th scope='col'>DATE</th>
+                <th scope='col'>DONOR</th>
+                <th scope='col'>CURRENCY</th>
+                <th scope='col'>AMOUNT</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope='row'>Jul 5, 2021</th>
+                <td>0x67b7628d1a734420911cd10a1a6ba57fd00f90ee</td>
+                <td>HNY</td>
+                <td>0.2</td>
+              </tr>
+              <tr>
+                <th scope='row'>Jun 28, 2021</th>
+                <td>0x67b7628d1a734420911cd10a1a6ba57fd00f90ee</td>
+                <td>XDAI</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <th scope='row'>Jun 22, 2021</th>
+                <td>0x67b7628d1a734420911cd10a1a6ba57fd00f90ee</td>
+                <td>HNY</td>
+                <td>0.5</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

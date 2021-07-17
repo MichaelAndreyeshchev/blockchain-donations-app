@@ -2,7 +2,8 @@ import './App.css';
 import Navigation from './components/Navigation';
 import Home from './components/Home';
 import TeamPage from './components/TeamPage';
-import SpecificDonation from './components/SpecificDonation.js'
+import SpecificDonation from './components/SpecificDonation.js';
+import Contact from './components/Contact';
 
 function App() {
   return (
