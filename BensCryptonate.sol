@@ -1,6 +1,14 @@
 // SPDX-License-Identifier: UNLICENSED
-
 pragma solidity >= 0.8.6;
+
+/// @title A contract for donating and voting for a specific project
+/// @author Ben Theurich
+// TODO: Figure out if we want to trigger releaseFunds automatically when the goal or deadline is met
+// TODO: Figure out if we want to keep contract written in wei, or convert to gwei, finney, or ether (1 wei is 1 * 10^-18 ether)
+// TODO: Add NatSpec comments througout
+// TODO: Test security, fix all public variables
+// TODO: If necessary, re-add user counting system
+// TODO: Remove code for admin if not needed
 
 contract Cryptonate {
 
@@ -10,9 +18,8 @@ contract Cryptonate {
     uint public minContribution; // minumum donation amount
     string[] public projectNames; // array of the project names
     uint[] public projectVotes; // array of the project votes
-    address payable charity;
-    string winner;
-    address public admin;
+    address payable public charity; // wallet address that the money will be sent to in the end
+    address public admin; // not used for anything yet
 
     
     constructor (uint _deadline, uint _minContribution, uint _goal, string[] memory _projectNames, address payable _charity) {
@@ -34,6 +41,7 @@ contract Cryptonate {
         }
     }
     
+    // not used for anything yet
     modifier adminOnlyCheck() { // checks if the sender is the admin
         require(msg.sender == admin);
         _;
@@ -59,18 +67,23 @@ contract Cryptonate {
         _;
     }
     
-    function donate(uint _vote) public payable campaignRunningCheck returns (string memory, uint){ // actual donate function 
+    // where the magic happens... donate and vote boys and girls!
+    function donate(uint _vote) public payable campaignRunningCheck returns (string memory, uint){
         require(msg.value >= minContribution); // checks to make sure we are paying the minumum donation amount
         require(_vote <= projectVotes.length); // checks to make sure that the project they want to vote for is a valid option
         
-        // divide the donation amount by the minimum contribution to find out how many votes they have
-        uint numVotes = msg.value / minContribution;
+        uint numVotes = msg.value / minContribution; // divide the donation amount by the minimum contribution to find out how many votes they have
         
         projectVotes[_vote - 1] += numVotes; // increase the vote counter
         
         amountRaised += msg.value; // increase our amount raised
         
+        /*if(amountRaised >= goal){
+            releaseFunds();
+        }*/
+        
         return (projectNames[_vote - 1], numVotes); // returns the name of the project and the number of votes that were cast for it
+        
     }
     
     // sends funds and vote tally to charity automatically once the campaign has ended
@@ -86,7 +99,6 @@ contract Cryptonate {
                 votes = projectVotes[i];
             }
         }
-        
-        return(projectNames[project - 1], votes, amountRaised); // return the name of the project, amount of votes, and the amount raised
+        return(projectNames[project], votes, amountRaised); // return the name of the project, amount of votes, and the amount raised
     }
 }
