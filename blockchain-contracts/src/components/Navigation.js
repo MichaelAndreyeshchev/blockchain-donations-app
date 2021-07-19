@@ -3,7 +3,7 @@ import NavCSS from './Navigation.module.css';
 const Navigation = () => {
   return (
     <nav>
-      <ul className={NavCSS.ul}>
+      <ul>
         <li>
           <a href="">Home</a>
         </li>
