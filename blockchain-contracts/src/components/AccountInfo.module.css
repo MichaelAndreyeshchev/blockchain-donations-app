@@ -1,0 +1,16 @@
+.container {
+  text-align: center;
+  font-size: 32px;
+  margin: auto;
+  max-width: 300px;
+  padding: 25px 50px;
+  border-style: solid;
+}
+
+p {
+  font-size: 20px;
+}
+
+.profileInfo {
+  border-style: solid;
+}
