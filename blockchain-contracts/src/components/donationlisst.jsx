@@ -1,9 +1,23 @@
 
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import donationListCSS from './donationList.module.css'
+import donationListCSS from './donationList.module.css';
+import data from './data/test.json';
 
+/*donation list would be fetch from server, currently using test.json to test*/ 
 function Donationlist() {
+    const [state, setState] = useState({
+        keyword: '',
+        donations:data,
+        options:{
+            sortBy:{"A":false,"B":false,"C":false},
+            groupBy:{"A":false,"B":false,"C":false}
+        }
+      });
+
+      function updateKeyword(e){
+          setState({keyword:e.target.value})
+      }
     return (
         <React.Fragment>
             <div className="container-fluid" >
@@ -36,7 +50,7 @@ function Donationlist() {
                             </ul>
                         </div>
                         <span>  <form className="d-flex">
-                            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={(e) => updateKeyword(e)}/>
                             <button className="btn btn-outline-success" type="submit">Search</button>
                         </form></span>
 
@@ -44,50 +58,21 @@ function Donationlist() {
                 </div>
                 <div className="main container-fluid">
                     <div className="row">
-                        <div className="col-3">
-                            <div className="card" style="width: 100%;">
-                                <img src="..." className="card-img-top" alt="..." />
-                                <div className="card-body">
-                                    <h5 className="card-title">Card title</h5>
-                                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" className="btn btn-primary">Go somewhere</a>
+                        {
+                            state.donations.map((item) =>{               
+                                return <div className="col-3">
+                                <div className="card" style={{width: '100%'}}>
+                                    <img src="..." className="card-img-top" alt="..." />
+                                    <div className="card-body">
+                                        <h5 className="card-title">{item.title}</h5>
+                                        <p className="card-text">{item.funds}</p>
+                                        <a href="#" className="btn btn-primary">{item.pageUrl}</a>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="col-3">
-                            <div className="card" style="width: 100%;">
-                                <img src="..." className="card-img-top" alt="..." />
-                                <div className="card-body">
-                                    <h5 className="card-title">Card title</h5>
-                                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        </div>
+                            </div>  
 
-                        <div className="col-3">
-                            <div className="card" style="width: 100%;">
-                                <img src="..." className="card-img-top" alt="..." />
-                                <div className="card-body">
-                                    <h5 className="card-title">Card title</h5>
-                                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="col-3">
-                            <div className="card" style="width: 100%;">
-                                <img src="..." className="card-img-top" alt="..." />
-                                <div className="card-body">
-                                    <h5 className="card-title">Card title</h5>
-                                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        </div>
-
-
+                            })
+                        }
 
                     </div>
                 </div>
