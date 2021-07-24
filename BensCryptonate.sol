@@ -3,74 +3,79 @@ pragma solidity >= 0.8.6;
 
 /// @title A contract for donating and voting for a specific project
 /// @author Ben Theurich
-// TODO: Figure out if we want to trigger releaseFunds automatically when the goal or deadline is met
-// TODO: Figure out if we want to keep contract written in wei, or convert to gwei, finney, or ether (1 wei is 1 * 10^-18 ether)
+// TODO: Figure out if we want to use events or returns?
+// TODO: Figure out if "get" functions make sense? 
+// TODO: Figure out if we want to keep contract written in wei, or convert to gwei, finney, or ether (1 wei is 1 * 10^-18 ether)?
+// TODO: Figure out if we want getDays to return days or seconds?
 // TODO: Add NatSpec comments througout
-// TODO: Test security, fix all public variables
-// TODO: If necessary, re-add user counting system
-// TODO: Remove code for admin if not needed
+// TODO: Test security
+// TODO: Test time deadline code
 
 contract Cryptonate {
 
-    uint public amountRaised = 0; 
-    uint public goal; // 0 means no goal, deadline instead
-    uint public deadline; // 0 means no deadline, goal instead
-    uint public minContribution; // minumum donation amount
-    string[] public projectNames; // array of the project names
-    uint[] public projectVotes; // array of the project votes
-    address payable public charity; // wallet address that the money will be sent to in the end
-    address public admin; // not used for anything yet
-
+    uint private amountRaised = 0;
+    uint private deadline = 0; // 0 means no deadline, goal instead
+    uint private goal = 0; // 0 means no goal, deadline instead
+    uint private minContribution; // minumum donation amount
+    string[] private projectNames; // array of the p8roject names
+    uint[] private projectVotes; // array of the project votes
+    address payable private charity; // wallet address that the money will be sent to in the end
+    address private admin; // wallet address that sets up the campaign
     
-    constructor (uint _deadline, uint _minContribution, uint _goal, string[] memory _projectNames, address payable _charity) {
-        // check to see if this campaign has a deadline
-        if(deadline != 0){
-            deadline = block.number + _deadline; // uses block numbers to calculate time instead of timestamps because they cannot be as easily manipulated
+    event DonationMade(string project, uint votes);
+    event FundsSent(string project, uint votes, uint amount);
+    event EmergencyOverride(string message);
+
+    /// @notice
+    /// @dev
+    constructor(string memory _endType, uint _endNumber, uint _minContribution, string[] memory _projectNames, address payable _charity) {
+        if(keccak256(abi.encodePacked((_endType))) == keccak256(abi.encodePacked(("Time")))){
+            deadline = (block.timestamp + _endNumber * 1 days);
+        }else if(keccak256(abi.encodePacked((_endType))) == keccak256(abi.encodePacked(("Money")))){
+            goal = _endNumber;
         }else{
-            deadline = 0;
+            revert("Error, incorrect endType");
         }
         minContribution = _minContribution;
-        goal = _goal;
         projectNames = _projectNames;
         charity = _charity;
         admin = msg.sender;
-        
+
         // fill the array that holds the votes with 0 votes each
         for(uint i = 0; i < _projectNames.length; i++){
             projectVotes.push(0);
         }
     }
     
-    // not used for anything yet
-    modifier adminOnlyCheck() { // checks if the sender is the admin
-        require(msg.sender == admin);
-        _;
+    /// @notice
+    /// @dev
+    function getAmount() public view returns(uint _amount){
+        _amount = amountRaised;
     }
     
-    // the next two modifiers are extremely redundant but I can't find a way to invert a modifier
+    /// @notice
+    /// @dev
+    function getDays() public view returns(uint _days){
+        require(deadline != 0, "Error, no time goal set");
+        _days = (deadline - block.timestamp) / 1 days;
+    }
     
-    modifier campaignRunningCheck() { // checks if the campaign is still ongoing (goal or deadline not reached)
+    /// @notice
+    /// @dev
+    function getCharity() public view returns(address _charity){
+        _charity = charity;
+    }
+
+    /// @notice
+    /// @dev
+    function donate(uint _vote) public payable {
         if(goal != 0){
-            require(amountRaised < goal);
+            require(amountRaised < goal, "Error, the donation goal has already been met");
         }else if(deadline != 0){
-            require(block.number < deadline);
+            require(block.number < deadline, "Error, the campaign deadline has passed");
         }
-        _;
-    }
-    
-    modifier campaignEndedCheck() { // checks if the campaign has ended (goal or deadline reached)
-        if(goal != 0){
-            require(amountRaised >= goal);
-        }else if(deadline != 0){
-            require(block.number >= deadline);
-        }
-        _;
-    }
-    
-    // where the magic happens... donate and vote boys and girls!
-    function donate(uint _vote) public payable campaignRunningCheck returns (string memory, uint){
-        require(msg.value >= minContribution); // checks to make sure we are paying the minumum donation amount
-        require(_vote <= projectVotes.length); // checks to make sure that the project they want to vote for is a valid option
+        require(msg.value >= minContribution, "Error, msg.value is less than the minimum contribution"); // checks to make sure we are paying the minumum donation amount
+        require(_vote <= projectVotes.length, "Error, project selection is not a valid option"); // checks to make sure that the project they want to vote for is a valid option
         
         uint numVotes = msg.value / minContribution; // divide the donation amount by the minimum contribution to find out how many votes they have
         
@@ -78,16 +83,25 @@ contract Cryptonate {
         
         amountRaised += msg.value; // increase our amount raised
         
-        /*if(amountRaised >= goal){
-            releaseFunds();
-        }*/
-        
-        return (projectNames[_vote - 1], numVotes); // returns the name of the project and the number of votes that were cast for it
-        
+        emit DonationMade(projectNames[_vote - 1], numVotes); // fires the DonationMade event and lists name of the project and the number of votes that were cast for it
     }
     
-    // sends funds and vote tally to charity automatically once the campaign has ended
-    function releaseFunds() public campaignEndedCheck returns(string memory _projectName, uint _numVotes, uint _amount){
+    /// @notice
+    /// @dev
+    function releaseFunds(bool _emergencyOverride) public {
+        require(msg.sender == admin || msg.sender == charity, "Error, msg.sender does not have authorization to run this function");
+        bool emergencyOverride = _emergencyOverride;
+
+        if(emergencyOverride){
+            emit EmergencyOverride("An emergency override was initiated to release the funds early");
+        }else{
+            if(goal != 0){
+                require(amountRaised >= goal, "Error, the donation goal has not been met");
+            }else if(deadline != 0){
+                require(block.number >= deadline, "Error, the campaign deadline has not passed");
+            }
+        }
+        
         charity.transfer(amountRaised); //transfer the money to the charity
         
         // count votes
@@ -99,6 +113,6 @@ contract Cryptonate {
                 votes = projectVotes[i];
             }
         }
-        return(projectNames[project], votes, amountRaised); // return the name of the project, amount of votes, and the amount raised
+        emit FundsSent(projectNames[project], votes, amountRaised); // triggers the FundsSent event and lists name of the project, amount of votes, and the amount raised
     }
 }
