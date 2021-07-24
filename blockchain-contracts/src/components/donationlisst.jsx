@@ -1,6 +1,6 @@
 
-import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
+import React, { useEffect, useState } from 'react';
+import bootstrap from 'bootstrap' 
 import donationListCSS from './donationList.module.css';
 import data from './data/test.json';
 
@@ -8,16 +8,38 @@ import data from './data/test.json';
 function Donationlist() {
     const [state, setState] = useState({
         keyword: '',
-        donations:data,
         options:{
-            sortBy:{"A":false,"B":false,"C":false},
-            groupBy:{"A":false,"B":false,"C":false}
+            sortBy:{"Name":false,"Funds":false},
+            category:{"A":false,"B":false,"C":false}
         }
       });
 
+      useEffect(()=>{
+          console.log(state.options.category)
+          console.log(state.keyword)
+      })
+
       function updateKeyword(e){
-          setState({keyword:e.target.value})
-      }
+        setState((prev) => ({...prev, 
+            keyword:e.target.value,
+         }))
+        }
+
+        function updateOptions(e){
+            const type = e.target.name;
+            console.log(type);
+            setState((prev) => ({
+                options:{
+                 ...prev.options,
+                  category:{
+                      ...prev.options.category,
+                      [type]:!prev.options.category[type]
+                  }
+                    
+                }
+             }))
+        }
+
     return (
         <React.Fragment>
             <div className="container-fluid" >
@@ -33,10 +55,13 @@ function Donationlist() {
                             <button className="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria- expanded="false">
                                 CATEGORY
                             </button>
-                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li style="float:none"><a className="dropdown-item" href="#">Action</a></li>
-                                <li style="float:none"><a className="dropdown-item" href="#">Another action</a></li>
-                                <li style="float:none"><a className="dropdown-item" href="#">Something else here</a></li>
+                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink" name="CATEGORY">
+                                {
+                                   Object.keys(state.options.category).map((item) => {
+                                       return  <li style={{float:"none"}} name={item} onClick={(e)=>{updateOptions(e)}}><a className="dropdown-item" href="#">{item}</a></li>
+                                   })
+                                }
+                              
                             </ul>
                         </div>
                         <div className="btn-group">
@@ -44,9 +69,11 @@ function Donationlist() {
                                 Sortby
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <li style="float:none"><a className="dropdown-item" href="#">Action</a></li>
-                                <li style="float:none"><a className="dropdown-item" href="#">Another action</a></li>
-                                <li style="float:none"><a className="dropdown-item" href="#">Something else here</a></li>
+                            {
+                                   Object.keys(state.options.sortBy).map((item) => {
+                                       return  <li style={{float:"none"}}><a className="dropdown-item" href="#">{item}</a></li>
+                                   })
+                                }
                             </ul>
                         </div>
                         <span>  <form className="d-flex">
@@ -58,14 +85,14 @@ function Donationlist() {
                 </div>
                 <div className="main container-fluid">
                     <div className="row">
-                        {
-                            state.donations.map((item) =>{               
+                    {
+                           data.donations.map((item) =>{               
                                 return <div className="col-3">
                                 <div className="card" style={{width: '100%'}}>
                                     <img src="..." className="card-img-top" alt="..." />
                                     <div className="card-body">
                                         <h5 className="card-title">{item.title}</h5>
-                                        <p className="card-text">{item.funds}</p>
+                                        <p className="card-text">{item.Funds}</p>
                                         <a href="#" className="btn btn-primary">{item.pageUrl}</a>
                                     </div>
                                 </div>
@@ -73,7 +100,6 @@ function Donationlist() {
 
                             })
                         }
-
                     </div>
                 </div>
 
