@@ -5,19 +5,31 @@ import donationListCSS from './donationList.module.css';
 import data from './data/test.json';
 
 /*donation list would be fetch from server, currently using test.json to test*/ 
+const options = [{sortBy:["Name","Funds",""]},{category:["A","B","C",""]}];
 function Donationlist() {
     const [state, setState] = useState({
+        donations:data.donations,
         keyword: '',
         options:{
-            sortBy:{"Name":false,"Funds":false},
-            category:{"A":false,"B":false,"C":false}
+            sortBy:"",
+            category:""
         }
       });
 
       useEffect(()=>{
-          console.log(state.options.category)
-          console.log(state.keyword)
+          console.log("category: " + state.options.category)
+          console.log("Sortby: "+state.options.sortBy)
+          console.log("Keyword: "+state.keyword)
+         
       })
+
+      useEffect(()=>{
+        handleChange();
+      },[state.options,state.keyword])
+
+      useEffect(()=>{ //similar to compomentDidMount()
+        //Fetch data from sever
+      },[])
 
       function updateKeyword(e){
         setState((prev) => ({...prev, 
@@ -25,19 +37,41 @@ function Donationlist() {
          }))
         }
 
-        function updateOptions(e){
-            const type = e.target.name;
-            console.log(type);
+        function updateOptions(val,e){
+            const value = val;
+            const type = e.target.dataset.type;
             setState((prev) => ({
+                ...prev,
                 options:{
                  ...prev.options,
-                  category:{
-                      ...prev.options.category,
-                      [type]:!prev.options.category[type]
-                  }
-                    
+                  [type]:value
                 }
              }))
+        }
+
+        function handleChange(){
+         const condition = {title:state.keyword, category:state.options.category}   
+         const newlist = data.donations.filter(
+               (donation) =>{
+                   for(const property in condition){
+                    if(condition[property] === ""){ //if the option has no value
+                        continue;
+                    }
+                    else{
+                        if(property === "title"){
+                            if(donation[property].includes(condition[property]) === false){
+                                return false;
+                            }
+                        }else if(donation[property] !== condition[property]){
+                            return false;
+                         }
+                    } 
+                    
+                   }
+                   return true;
+               }
+           )
+           setState((pre)=> ({...pre, donations:newlist}))
         }
 
     return (
@@ -57,8 +91,9 @@ function Donationlist() {
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink" name="CATEGORY">
                                 {
-                                   Object.keys(state.options.category).map((item) => {
-                                       return  <li style={{float:"none"}} name={item} onClick={(e)=>{updateOptions(e)}}><a className="dropdown-item" href="#">{item}</a></li>
+                                  options[1].category.map((item) => {
+                                       return  <li style={{float:"none"}} name={item} onClick={(e)=>{updateOptions(item,e)}}>
+                                           <a className="dropdown-item" href="#"  data-type ="category">{item}</a></li>
                                    })
                                 }
                               
@@ -70,8 +105,9 @@ function Donationlist() {
                             </button>
                             <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             {
-                                   Object.keys(state.options.sortBy).map((item) => {
-                                       return  <li style={{float:"none"}}><a className="dropdown-item" href="#">{item}</a></li>
+                                   options[0].sortBy.map((item) => {
+                                       return  <li style={{float:"none"}} name={item} onClick={(e)=>{updateOptions(item,e)}}>
+                                           <a className="dropdown-item" href="#"  data-type ="sortBy">{item}</a></li>
                                    })
                                 }
                             </ul>
@@ -86,13 +122,14 @@ function Donationlist() {
                 <div className="main container-fluid">
                     <div className="row">
                     {
-                           data.donations.map((item) =>{               
+                           state.donations.map((item) =>{               
                                 return <div className="col-3">
                                 <div className="card" style={{width: '100%'}}>
                                     <img src="..." className="card-img-top" alt="..." />
                                     <div className="card-body">
                                         <h5 className="card-title">{item.title}</h5>
                                         <p className="card-text">{item.Funds}</p>
+                                        <p className="card-text">{item.category}</p>
                                         <a href="#" className="btn btn-primary">{item.pageUrl}</a>
                                     </div>
                                 </div>
