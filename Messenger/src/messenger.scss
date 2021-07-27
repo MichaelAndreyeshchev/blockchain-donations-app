@@ -1,0 +1,83 @@
+$bk_color: #fff0f8;
+$contact_pane_color: #6ce235;
+$message_pane_color: #ff0000;
+
+/*contains the navbar and message/contact*/
+.page {
+    width: 100%;
+    height: 100%;
+    display: flex; /*the app wont extend past the size of the window*/
+    flex-direction: column;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin: 0px auto;
+    flex: 1 1 auto;
+}
+
+
+/* mobile first */
+.contactPane {
+    width: 100%;
+    background-color: $contact_pane_color;
+    height: 100px;
+}
+
+#openContactButton {
+    background-color: #ffff00;
+    width: 50px;
+    height: 50px;
+    display: block;
+    align-self: center;
+    margin-left: 10px;
+}
+
+.messagePane {
+    //height: 100vh;
+    height: 100%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 1;
+    background-color: $message_pane_color;
+}
+
+.navbar {
+    width: 100%;
+    height: 80px;
+    background-color: blue;
+    display: flex;
+}
+
+@media only screen and (max-width: 700px) {
+    .messagePane {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .contactPane {
+        width: 300px;
+    }
+
+    #openContactButton {
+        display: none;
+        /*contact menu button only for mobile*/
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .contactPane {
+        width: 500px;
+    }
+
+    .navbar {
+        height: 90px;
+    }
+
+}
+
+
+
