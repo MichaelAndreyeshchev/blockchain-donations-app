@@ -1,24 +1,29 @@
 {
     "donations":[
         {
-            "title": "Helpchildren",
+            "title": "HelpKids",
             "Funds": 20000000,
-            "pageUrl": "xxxxxxx"
+            "pageUrl": "xxxxxxx",
+            "category": "A"
+
         },
         {
-            "title": "Helpchildren2",
+            "title": "HelpGoodChildren",
             "Funds": 10000000,
-            "pageUrl": "xxxxxxx"
+            "pageUrl": "xxxxxxx",
+            "category": "B"
         },
         {
-            "title": "Helpchildren3",
+            "title": "HelpTeens",
             "Funds": 50000,
-            "pageUrl": "xxxxxxx"
+            "pageUrl": "xxxxxxx",
+            "category": "A"
         },
         {
-            "title": "Helpchildren4",
+            "title": "HelpChildren",
             "Funds": 1000,
-            "pageUrl": "xxxxxxx"
+            "pageUrl": "xxxxxxx",
+            "category": "C"
         }
     ]
 }

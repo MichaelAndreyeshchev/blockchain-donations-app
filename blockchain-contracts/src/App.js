@@ -11,7 +11,7 @@ function App() {
     <div>
       <Navigation />
       {<Home/>}
-      {/*<Donationlist />*/}
+      {/*<Donationlist/>*/}
     </div>
   );
 }
