@@ -1,20 +1,33 @@
 import NavCSS from './Navigation.module.css';
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
   return (
     <nav>
       <ul>
         <li>
-          <a href="">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="">Team</a>
+          <Link to="/teampage">Team</Link>
         </li>
         <li>
-          <a href="">Donations</a>
+          <Link to="/specificdonation">Donations</Link>
+        </li>
+        <li>
+          <Link to="/accountinfo">AccountInfo</Link>
+        </li>
+        <li>
+          <Link to="/contact">Contact</Link>
+        </li>
+        <li>
+          <Link to="/portalpage">Portal</Link>
         </li>
         <li style={{ float: 'right' }}>
-          <a href="">Login/Sign-in</a>
+          <Link to="/signin">Login</Link>
+        </li>
+        <li style={{ float: 'right' }}>
+          <Link to="/signup">Sign up</Link>
         </li>
       </ul>
     </nav>
