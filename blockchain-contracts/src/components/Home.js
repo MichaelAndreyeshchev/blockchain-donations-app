@@ -1,23 +1,42 @@
+import React from 'react';
+import HomeCSS from './Home.module.css';
 const Home = () => {
   return (
-    <div class="container">
-      <h1>Home</h1>
-      <p>
-        "At vero eos et accusamus et iusto odio dignissimos ducimus qui
-        blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
-        et quas molestias excepturi sint occaecati cupiditate non provident,
-        similique sunt in culpa qui officia deserunt mollitia animi, id est
-        laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita
-        distinctio. Nam libero tempore, cum soluta nobis est eligendi optio
-        cumque nihil impedit quo minus id quod maxime placeat facere possimus,
-        omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem
-        quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet
-        ut et voluptates repudiandae sint et molestiae non recusandae. Itaque
-        earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
-        voluptatibus maiores alias consequatur aut perferendis doloribus
-        asperiores repellat."
-      </p>
-    </div>
+    <React.Fragment>
+      <div className="container-flex">
+        {/* Create account section */}
+        <section>
+          <div className="row my-5">
+            <div className="col infoBox text-center ">
+              <h2>Create a Cryptonate Account</h2>
+              <p className="mt-5">
+                By creating an account you can track your donations, recieve
+                e-mail updates from charities, and manage your Cryptonate
+                profile
+              </p>
+              <button
+                type="button"
+                className="btn bg-dark"
+                style={{ color: 'white' }}
+              >
+                Create Account
+              </button>
+            </div>
+            <div className="col infoBox d-flex justify-content-center  ">
+              <img
+                className="img-fluid rounded mb-4 mb-lg-0"
+                src={'./placeholder.jpg'}
+                alt=""
+              />
+            </div>
+          </div>
+        </section>
+        {/* Top Campaigns Section */}
+        <section></section>
+        {/* How it works Section */}
+        <section></section>
+      </div>
+    </React.Fragment>
   );
 };
 
