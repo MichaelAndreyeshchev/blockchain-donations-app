@@ -1,22 +1,15 @@
 import React from 'react';
 
 class Navbar extends React.Component {
-   constructor () {
-      super();
-
-      this.state = {
-         showMessagePane: false
-      }
-   }
-
-   openMessagePane() {
-
+   click = () => {
+      this.props.toggleMobileView();
    }
 
    render(){
+
       return(
          <div class="navbar">
-            <button onClick={this.openMessagePane} type="button" id="openContactButton"></button>
+            <button onClick={this.click} type="button" id="openContactButton"></button>
          </div>
       );
    }
