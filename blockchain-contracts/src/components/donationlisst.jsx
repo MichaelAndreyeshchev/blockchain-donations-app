@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import bootstrap from 'bootstrap' 
 import donationListCSS from './donationList.module.css';
 import data from './data/test.json';
+import Pagination from './pagination'
 
 /*donation list would be fetch from server, currently using test.json to test*/ 
 const options = [{sortBy:["Name","Funds",""]},{category:["A","B","C",""]}];
@@ -49,8 +50,31 @@ function Donationlist() {
              }))
         }
 
+        function sortingNum(x,y){
+            if (x.Funds < y.Funds) {
+                return -1;
+            }
+            if (x.Funds > y.Funds) {
+                return 1;
+            }
+            return 0;
+        } 
+
+        function sortingString(s1,s2){
+           let x1 = s1.title.toUpperCase();
+            let x2 = s2.title.toUpperCase();
+            if (x1 < x2) {
+                return -1;
+            }
+            if (x1 > x2) {
+                return 1;
+            }
+            return 0;
+        }
+
         function handleChange(){
-         const condition = {title:state.keyword, category:state.options.category}   
+         const condition = {title:state.keyword, category:state.options.category}
+         const sorting = state.options.sortBy;  
          const newlist = data.donations.filter(
                (donation) =>{
                    for(const property in condition){
@@ -59,7 +83,9 @@ function Donationlist() {
                     }
                     else{
                         if(property === "title"){
-                            if(donation[property].includes(condition[property]) === false){
+                             const dTitle = donation[property].toUpperCase() 
+                             const cTitle = condition[property].toUpperCase()
+                            if(dTitle.includes(cTitle) === false){
                                 return false;
                             }
                         }else if(donation[property] !== condition[property]){
@@ -71,6 +97,15 @@ function Donationlist() {
                    return true;
                }
            )
+           if(sorting !== ""){
+               if(sorting === "Name"){
+                  newlist.sort(sortingString);  
+               }
+               if(sorting ==="Funds"){
+                  newlist.sort(sortingNum);  
+               }
+
+           }
            setState((pre)=> ({...pre, donations:newlist}))
         }
 
@@ -140,15 +175,7 @@ function Donationlist() {
                     </div>
                 </div>
 
-                <div className="pagination">
-                    page
-                    <select name="page">
-                        <option value="volvo">1</option>
-                        <option value="saab">2</option>
-                        <option value="mercedes">3</option>
-                        <option value="audi">4</option>
-                    </select>
-                </div>
+                <Pagination/>
             </div>
 
         </React.Fragment>

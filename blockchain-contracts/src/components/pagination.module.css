@@ -1,0 +1,26 @@
+div.pagination{
+    bottom: 3rem;
+    left: 5rem;
+    position: fixed;
+    background-color:#404040;
+    color:white
+    
+  }
+
+  
+  *{
+    box-sizing: border-box;
+  }
+
+  div.pagination::after{
+    background-color: rgba(59,58,57,.8);
+    border-radius: 1.8rem;
+    content: "";
+    height: 3.6rem;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    transition: all .2s ease;
+    width: 3.6rem;
+}

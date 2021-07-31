@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
+import bootstrap from 'bootstrap' 
 import signInCSS from './signIn.module.css'
 
 function Signin() {
