@@ -9,6 +9,7 @@ import PortalPage from './components/PortalPage';
 import signin from './components/signin';
 import signup from './components/signup';
 import donationlisst from './components/donationlisst';
+import Footer from './components/Footer';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route exact path="/donationlisst" component={donationlisst} />
         <Route exact path="/portalpage" component={PortalPage} />
       </Router>
+      <Footer />
     </div>
   );
 }

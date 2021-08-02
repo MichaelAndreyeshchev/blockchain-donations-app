@@ -3,7 +3,7 @@ import HomeCSS from './Home.module.css';
 const Home = () => {
   return (
     <React.Fragment>
-      <div className={`container-flex ${HomeCSS.contain}`} id="container-flex">
+      <div className={`container-flex ${HomeCSS.contain}`}>
         {/* Create account section */}
         <section>
           <div className="row my-5">
@@ -22,7 +22,7 @@ const Home = () => {
                 Create Account
               </button>
             </div>
-            <div className="col d-flex justify-content-center  ">
+            <div className="col d-flex justify-content-center">
               <img
                 className="img-fluid rounded mb-4 mb-lg-0"
                 src={'./placeholder.jpg'}

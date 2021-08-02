@@ -15,7 +15,7 @@ const Navigation = () => {
           <Link to="/specificdonation">Donations</Link>
         </li>
         <li>
-          <Link to="/donationlisst">DonationList</Link>
+          <Link to="/donationlisst">Donation List</Link>
         </li>
         <li>
           <Link to="/accountinfo">AccountInfo</Link>
