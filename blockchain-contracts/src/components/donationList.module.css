@@ -54,3 +54,27 @@ ul{
     background-color:#404040;
     color:white
   }
+
+  .formcontrolfeedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem !important;
+    text-align: center;
+    pointer-events: none;
+    
+}
+
+#formcontrol {
+  padding-left: 2.375rem;
+}
+
+#container{
+  background-color: #b8b8b8;
+}
+
+h1{
+  color: white;
+}

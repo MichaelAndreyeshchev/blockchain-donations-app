@@ -1,21 +1,24 @@
 import React, { useState } from 'react';
-import bootstrap from 'bootstrap' 
+import bootstrap from 'bootstrap'
 import paginationcss from './pagination.module.css'
 
-function Pagination(){
-   return(
-       <React.Fragment>
-                <div className={paginationcss.pagination}>
-                    page
-                    <select name="page">
-                        <option value="volvo">1</option>
-                        <option value="saab">2</option>
-                        <option value="mercedes">3</option>
-                        <option value="audi">4</option>
-                    </select>
+const optionDemo = ["url1", "url2", "url3", "url4"] //get from props in real case
+function Pagination(props) {
+    return (
+        <React.Fragment>
+            <div className={paginationcss.pagination}>
+                <div className={paginationcss.outerWrapper}>
+                    <div>
+                        <select name="page">
+                            {optionDemo.map((item, index) => (
+                                <option value={item}>{index + 1}</option>
+                            ))}
+                        </select>
+                    </div>
                 </div>
-       </React.Fragment>
-   )
+            </div>
+        </React.Fragment>
+    )
 }
 
 export default Pagination;
