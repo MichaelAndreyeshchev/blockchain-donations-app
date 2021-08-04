@@ -2,95 +2,171 @@ import React from 'react';
 import style from './SpecificDonation.module.css';
 
 const SpecificDonation = () => {
-  return (
-    <div className='container'>
-      <div className='wrapper'>
-        <div className={style.imageContainer}>
-          <img
-            src='https://dummyimage.com/2000x2000/000/fff&text=image'
-            alt='Image Of Charity'
-          />
-        </div>
-        <div className={style.descriptionContainer}>
-          <h1>Name of donation</h1>
-          <p>
-            by some charity (<span>verified</span>)
-          </p>
-          <div className={style.tagContainer}>
-            <span>Technology</span> <span>Community</span> <span>Research</span>
-          </div>
-          <p>
-            Description for the donation~~Lorem ipsum dolor sit amet
-            consectetur, adipisicing elit. Architecto neque ad expedita modi
-            beatae laudantium ea labore maxime dolorum adipisci autem,
-            voluptate, voluptatum quis doloremque vero hic cumque voluptates
-            distinctio!
-          </p>
-        </div>
-
-        <h1>Pictures of charity using the money?</h1>
-
-        <div className={style.shareDonateContainer}>
-          <div className={style.donateContainer}>
-            <h2>Be a Donator today!</h2>
-            <h2>Donators: 3</h2>
-            <button>DONATE</button>
-          </div>
-          <div className={style.shareContainer}>
-            <h2>Share this donation today!</h2>
-            <span>Follow icon?</span>
-            <span>Love icon</span>
-            <span>Share icon</span>
-          </div>
-        </div>
-
-        <div className={style.fundsContainer}>
-          <div className={style.displayFunds}>
-            <h2>Total Money Raised:</h2>
-            <div className={style.moneyRaised}>
-              <h2>$2000</h2>
-              <h2>0.9 ETH</h2>
+    return (
+        <main>
+            <div className={style.container}>
+                <img
+                    className={style.container__image}
+                    src='https://dummyimage.com/2000x2000/000/fff&text=image'
+                    alt='image of a charity'
+                />
             </div>
-            <div className={style.donationAddress}>
-              <p>Donation address:</p>
-              <p>0x634977e11C823a436e587C1a1Eca959588C64287</p>
+
+            <section
+                className={style.container + ' ' + style['container--charity']}
+                id='charity_content'
+            >
+                <div className={style['description-container']}>
+                    <h1 className={style['charity-name']}>Name of donation</h1>
+                    <div className={style['tag-container']}>
+                        <div className={style['tag-container__wrapper']}>
+                            <span>Technology</span>
+                        </div>
+                        <div className={style['tag-container__wrapper']}>
+                            <span>Community</span>
+                        </div>
+                        <div className={style['tag-container__wrapper']}>
+                            <span>Research</span>
+                        </div>
+                        <div className={style['tag-container__wrapper']}>
+                            <span>Research</span>
+                        </div>
+                        <div className={style['tag-container__wrapper']}>
+                            <span>Research</span>
+                        </div>
+                        <div className={style['tag-container__wrapper']}>
+                            <span>Research</span>
+                        </div>
+                        <div className={style['tag-container__wrapper']}>
+                            <span>Research</span>
+                        </div>
+                    </div>
+                    <p className={style['description-container__description']}>
+                        Description for the donation~~Lorem ipsum dolor sit amet
+                        consectetur, adipisicing elit. Architecto neque ad
+                        expedita modi beatae laudantium ea labore maxime dolorum
+                        adipisci autem, voluptate, voluptatum quis doloremque
+                        vero hic cumque voluptates distinctio!
+                    </p>
+                    <h2
+                        className={style['description-container__total-raised']}
+                    >
+                        Total Money Raised: <span>$23,410</span>
+                    </h2>
+                    <button className={style.button}>Donate Now!</button>
+                </div>
+
+                <div className={style['charity-profile-card']}>
+                    <div className={style['charity-profile']}>
+                        <img
+                            className={style['charity-profile__image']}
+                            src='https://i.pinimg.com/originals/f9/11/d3/f911d38579709636499618b6b3d9b6f6.jpg'
+                            alt='profile picture of a charity'
+                        />
+                        <h2 className={style['charity-profile__name']}>
+                            Charity Name
+                        </h2>
+                    </div>
+
+                    <h2 className={style['charity-profile__total-donor']}>
+                        2,689 Donors!
+                    </h2>
+
+                    <div className='progress' id={style['charity--progress']}>
+                        <div
+                            className='progress-bar'
+                            role='progressbar'
+                            ariaValueNow
+                            aria-valuenow='60'
+                            aria-valuemin='0'
+                            aria-valuemax='100'
+                            style={{ width: '60%', borderRadius: '100px' }}
+                        >
+                            60% of Goal
+                        </div>
+                        <div className={style['charity-target']}>
+                            <div>
+                                <span
+                                    className={
+                                        style['charity-target__description']
+                                    }
+                                >
+                                    $75K
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={style['charity-social']}>
+                        <div className={style['charity-social__container']}>
+                            <i
+                                className={`far fa-heart ${style['charity-social__icon']}`}
+                            ></i>
+                            <span
+                                className={style['charity-social__description']}
+                            >
+                                15.43k Likes
+                            </span>
+                        </div>
+                        <div className={style['charity-social__container']}>
+                            <i
+                                className={`fas fa-share-square ${style['charity-social__icon']}`}
+                            ></i>
+                            <span
+                                className={style['charity-social__description']}
+                            >
+                                782 Shares
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div className={style.container + ' ' + style['container-donors']}>
+                <div className={style['container-donors__title']}>
+                    <h2>Recent Donors</h2>
+                </div>
+                <div className={style['table-container']}>
+                    <table className='table' id={style['donor-table']}>
+                        <thead>
+                            <tr>
+                                <th scope='col'>Date</th>
+                                <th scope='col'>Account</th>
+                                <th scope='col'>Currency</th>
+                                <th scope='col'>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope='row'>Jul 5, 2021</th>
+                                <td>
+                                    0x67b7628d1a734420911cd10a1a6ba57fd00f90ee
+                                </td>
+                                <td>HNY</td>
+                                <td>0.2</td>
+                            </tr>
+                            <tr>
+                                <th scope='row'>Jun 28, 2021</th>
+                                <td>
+                                    0x67b7628d1a734420911cd10a1a6ba57fd00f90ee
+                                </td>
+                                <td>XDAI</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <th scope='row'>Jun 22, 2021</th>
+                                <td>
+                                    0x67b7628d1a734420911cd10a1a6ba57fd00f90ee
+                                </td>
+                                <td>HNY</td>
+                                <td>0.5</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-          </div>
-          <h3>Search bar?</h3>
-          <table class='table'>
-            <thead>
-              <tr>
-                <th scope='col'>DATE</th>
-                <th scope='col'>DONOR</th>
-                <th scope='col'>CURRENCY</th>
-                <th scope='col'>AMOUNT</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope='row'>Jul 5, 2021</th>
-                <td>0x67b7628d1a734420911cd10a1a6ba57fd00f90ee</td>
-                <td>HNY</td>
-                <td>0.2</td>
-              </tr>
-              <tr>
-                <th scope='row'>Jun 28, 2021</th>
-                <td>0x67b7628d1a734420911cd10a1a6ba57fd00f90ee</td>
-                <td>XDAI</td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <th scope='row'>Jun 22, 2021</th>
-                <td>0x67b7628d1a734420911cd10a1a6ba57fd00f90ee</td>
-                <td>HNY</td>
-                <td>0.5</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  );
+        </main>
+    );
 };
 
 export default SpecificDonation;
