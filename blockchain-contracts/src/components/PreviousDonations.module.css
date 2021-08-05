@@ -1,0 +1,76 @@
+a{
+    text-decoration: none;
+  }
+  
+  body
+  {
+    background-color: lightgreen;
+  }
+  .yourportaltext h1
+  {
+    font-size: 80px;
+    color: rgb(122, 122, 122);
+    margin-top: 100px;
+    margin-left: 75px;
+    text-align: left;
+  }
+  
+  .yourportaltext h2
+  {
+    color: rgb(122, 122, 122);
+    margin-top: 25px;
+    margin-left: 85px;
+    text-align: left;
+  }
+  
+    
+    .portalBox 
+    {
+      background: white;
+      padding: 20px;
+      border: 30px ridge #B2AC88;
+      margin-left:75px;
+      margin-bottom:50px;
+      height: 700px;
+      width: 1000px;
+      text-align: left;
+    }
+  
+    .buttonGroup
+    {
+      float:left;
+      border-radius: 25px;
+      font-size: 20px;
+      text-align: left;
+      color: white;
+      margin-left:100px;
+      position:relative;
+      top:-700px;
+    }
+  
+    .buttonGroup button:hover 
+    {
+      background-color:lightgreen;
+      cursor:pointer;
+      border:5px black;
+    }
+  
+  .yourDonationTracker
+  {
+    color:darkgrey;
+    font-size: 50px;
+    margin-left:240px;
+  }
+  
+  .userDataTable th, .userDataTable td
+  {
+    border: 1px solid #000;
+    border-collapse: collapse;
+    padding:10px;
+  }
+  
+  .userDataTable
+  {
+    margin-top:100px;
+  }
+  

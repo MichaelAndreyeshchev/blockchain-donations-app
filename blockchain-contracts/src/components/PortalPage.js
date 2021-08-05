@@ -1,30 +1,33 @@
-import PortalPageCSS from './PortalPage.module.css';
+import PortalPageCSS from './PortalPage.module.css'
+import {Link} from 'react-router-dom';
 
-const PortalPage = () => {
-  return (
-    <div>
-      <div className={PortalPageCSS.titleScreen}>
-        <h2>Your Donation Portal</h2>
+const PortalPage = () => 
+{
 
-        <div className={PortalPageCSS.portalBox}>
-          <div className={PortalPageCSS.trackDonations}>
-            <h1>
-              <a href>Track previous donations</a>
-            </h1>
-          </div>
-          <div className={PortalPageCSS.newDonation}>
-            <h1>
-              <a href>Begin a new donation</a>
-            </h1>
-          </div>
-          <div className={PortalPageCSS.statistics}>
-            <h1>
-              <a href>View your donation statistics</a>
-            </h1>
-          </div>
-        </div>
-      </div>
+return (
+
+<div className = {PortalPageCSS.body}>
+
+  <div className = {PortalPageCSS.yourportaltext}>
+    <h1>Your Donation Portal</h1>
+    <h2>Welcome to the donation portal. Donating has never been more efficient, and this is the heart of your donations! 
+      Choose an option to get started</h2>
+  </div>
+
+    <div className = {PortalPageCSS.portalBox}>
     </div>
+
+      <div className = {PortalPageCSS.buttonGroup}>
+        <button><Link to = "/PreviousDonations">Track previous donations</Link></button>
+
+        <button><Link to = "/CreateDonation">Begin a new donation</Link></button>
+
+        <button><Link to = "/DonationStatistics">View your donation statistics</Link></button>
+      </div>
+
+  </div>
+
   );
 };
+  
 export default PortalPage;
