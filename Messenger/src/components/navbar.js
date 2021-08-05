@@ -8,8 +8,8 @@ class Navbar extends React.Component {
    render(){
 
       return(
-         <div class="navbar">
-            <button onClick={this.click} type="button" id="openContactButton"></button>
+         <div id="navbar">
+            <button onClick={this.click} type="button" id="open-contact-button"></button>
          </div>
       );
    }
