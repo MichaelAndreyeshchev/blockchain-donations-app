@@ -1,45 +1,58 @@
-.body {
-  background: lightgreen;
-}
-
-.portalBox {
-  background: white;
-  color: black;
-  font-family: helvetica;
-  font-size: 12px;
-  padding: 20px;
-  border: 10px ridge #b2ac88;
-  margin: 200px;
-  margin-top: 75px;
-  height: 300px;
-  position: relative;
-}
-
-.div h1 {
-  background: #466d1d;
-  width: 400px;
-  font-size: 20px;
-  text-align: center;
-  color: white;
-  border: 10px ridge royalblue;
-  padding: 15px;
-  margin-left: 10px;
-  margin-top: 20px;
-}
-
-.a {
-  color: white;
-  font-style: none;
+a{
   text-decoration: none;
 }
 
-.div h2 {
-  margin-left: 260px;
-  margin-top: 75px;
-  font-size: 96px;
-  color: darkgrey;
+body
+{
+  background-color: rgb(178, 224, 178) !important;
 }
-.div h1:hover {
-  background-color: grey;
-  cursor: pointer;
+
+.yourportaltext h1 
+{
+  font-size: 80px;
+  color: rgb(122, 122, 122);
+  margin-top: 100px;
+  margin-left: 75px;
+  text-align: left;
+  
 }
+
+.yourportaltext h2
+{
+  color: rgb(122, 122, 122);
+  margin-top: 25px;
+  margin-left: 85px;
+  text-align: left;
+}
+
+  
+  .portalBox 
+  {
+    background: white;
+    padding: 20px;
+    /*border: 30px ridge #B2AC88;*/
+    margin-left:75px;
+    margin-bottom:50px;
+    height: 700px;
+    width: 1000px;
+    text-align: left;
+  }
+
+  .buttonGroup
+  {
+    float:left;
+    border-radius: 25px;
+    font-size: 20px;
+    text-align: left;
+    color: white;
+    margin-left:100px;
+    position:relative;
+    top:-700px;
+  }
+
+  .buttonGroup button:hover 
+  {
+    background-color:rgb(178, 224, 178);
+    cursor:pointer;
+    border:5px black;
+  }
