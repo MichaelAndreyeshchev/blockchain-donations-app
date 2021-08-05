@@ -4,8 +4,12 @@ $messagePane_color: red;
 $navbar_color: blue;
 $interactionBox_color: purple;
 $messsageEntry_color: orange;
-$contact_displayname_color: #292929;
-$contact_message_color: #464646;
+$contact_displayname_tcolor: #292929;
+$contact_message_tcolor: #464646;
+$from_color: #ff8d8d;
+$to_color: #82ffac;
+$from_tcolor: #292929;
+$to_tcolor: #292929;
 
 /*contains the navbar and message/contact*/
 #page {
@@ -72,6 +76,8 @@ $contact_message_color: #464646;
     height: 80px;
     background-color: $navbar_color;
     display: flex;
+    flex-shrink: 0;
+    flex-grow: 0;
 }
 
 #interaction-box {
@@ -132,6 +138,59 @@ $contact_message_color: #464646;
     align-self: center;
 }
 
+#messages-container {
+    background-color: firebrick;
+    width: 100%;
+    flex-grow: 1; /*target size is 0px, but extend out to fill empty space*/
+    flex-shrink: 0; /*allows overflow to work*/
+    overflow-y: auto;
+    flex-basis: 0px;
+}
+
+%message-container {
+    display: inline-block;
+    width: 100%;
+    padding: 7px;
+    box-sizing: border-box;
+    vertical-align: top; /*gets rid of weird space in between messages*/
+}
+
+.from-container {
+    @extend %message-container;
+    background-color: orangered;
+}
+
+.to-container {
+    @extend %message-container;
+    background-color: blueviolet;
+}
+
+%message {
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    max-width: 45%;
+    overflow-wrap: anywhere;
+}
+
+.from {
+    @extend %message;
+    background-color: $from_color;
+    color: $from_tcolor;
+    margin-left: 10px;
+    float: left;
+}
+
+.to {
+    @extend %message;
+    background-color: $to_color;
+    color: $to_tcolor;
+    margin-right: 10px;
+    float: right;
+}
 
 .contact {
     background-color: $contact_color;
@@ -151,17 +210,17 @@ $contact_message_color: #464646;
     font-family: Roboto, Arial;
     font-size: 25px;
     font-weight: bold;
-    color: $contact_displayname_color;
+    color: $contact_displayname_tcolor;
 }
 
-.contact .message {
+.contact .charityMessage {
     margin-top: 10px;
     background-color: cadetblue;
     font-family: Arial, Helvetica, sans-serif;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: $contact_message_color;
+    color: $contact_message_tcolor;
 
 }
 
