@@ -15,22 +15,13 @@
 main {
     font-family: 'Poppins', sans-serif;
     background: var(--grey);
+    padding: 30px 0;
 }
 
 .container {
-    margin: 30px auto;
+    margin: 0 auto 30px;
     padding: 0;
     max-width: 90%;
-}
-
-/* Charity_image Section */
-
-.container__image {
-    width: 100%;
-    height: 100%;
-    max-height: 200px;
-    object-fit: cover;
-    background-position: center;
 }
 
 /* Charity_content Section */
@@ -45,6 +36,7 @@ main {
     width: 50%;
     text-align: justify;
     margin-bottom: 0;
+    position: relative;
 }
 
 .charity-name {
@@ -74,10 +66,12 @@ main {
     width: 90%;
     max-width: 700px;
     font-size: clamp(0.8rem, 1vw, 1.3rem);
+    text-align: justify;
 }
 
 .description-container__total-raised {
     font-size: clamp(1rem, 2.5vw, 2rem);
+    text-align: left;
 }
 
 .button {
@@ -88,6 +82,13 @@ main {
     padding: 8px 0;
     font-size: clamp(0.8rem, 2vw, 2.5rem);
     font-weight: 600;
+    background: #fff;
+    /* transition: 0.5s background ease-in-out; */
+}
+
+.button:hover {
+    background: #151515;
+    color: #fff;
 }
 
 .charity-profile-card {
@@ -174,6 +175,7 @@ main {
     color: var(--white);
     padding: 15px 0;
     display: flex;
+    margin: 0 auto;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -215,6 +217,7 @@ main {
     .description-container {
         width: 100%;
         margin-bottom: 20px;
+        text-align: center;
     }
 
     .charity-profile-card {
@@ -228,5 +231,15 @@ main {
 
     .charity--progress {
         font-size: 0.65rem;
+    }
+
+    .description-container__total-raised {
+        text-align: center;
+    }
+
+    .button {
+        position: relative;
+        /* left: 50%; */
+        /* transform: translateX(50%); */
     }
 }

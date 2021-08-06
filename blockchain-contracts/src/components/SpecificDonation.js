@@ -4,14 +4,6 @@ import style from './SpecificDonation.module.css';
 const SpecificDonation = () => {
     return (
         <main>
-            <div className={style.container}>
-                <img
-                    className={style.container__image}
-                    src='https://dummyimage.com/2000x2000/000/fff&text=image'
-                    alt='image of a charity'
-                />
-            </div>
-
             <section
                 className={style.container + ' ' + style['container--charity']}
                 id='charity_content'
@@ -76,7 +68,6 @@ const SpecificDonation = () => {
                         <div
                             className='progress-bar'
                             role='progressbar'
-                            ariaValueNow
                             aria-valuenow='60'
                             aria-valuemin='0'
                             aria-valuemax='100'
