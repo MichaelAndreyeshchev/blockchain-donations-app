@@ -1,13 +1,12 @@
 .app {
   display: grid;
-  background-color: gainsboro;
+  background-color: rgb(199, 177, 177);
   place-items: center;
   height: 100vh;
 }
 
 .app_body {
   display: flex;
-  padding: 20px;
   background-color: aliceblue;
   height: 90vh;
   width: 90vh;
