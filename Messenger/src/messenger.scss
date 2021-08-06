@@ -1,27 +1,35 @@
 $bk_color: #fff0f8;
-$contact_pane_color: #6ce235;
-$message_pane_color: #ff0000;
+$contact_color: green;
+$messagePane_color: red;
+$navbar_color: blue;
+$interactionBox_color: purple;
+$messsageEntry_color: orange;
+$contact_displayname_tcolor: #292929;
+$contact_message_tcolor: #464646;
+$from_color: #ff8d8d;
+$to_color: #82ffac;
+$from_tcolor: #292929;
+$to_tcolor: #292929;
 
 /*contains the navbar and message/contact*/
-.page {
+#page {
     width: 100%;
     height: 100%;
     display: flex; /*the app wont extend past the size of the window*/
     flex-direction: column;
 }
 
-.container {
+#container {
     width: 100%;
     height: 100%;
     display: flex;
+    flex-direction: row;
     margin: 0px auto;
-    flex: 1 1 auto;
 }
 
 
 /* mobile first */
-
-#openContactButton {
+#open-contact-button {
     background-color: #ffff00;
     width: 50px;
     height: 50px;
@@ -30,58 +38,219 @@ $message_pane_color: #ff0000;
     align-self: center;
     margin-left: 10px;
 }
+#open-contact-button:hover {
+    cursor: pointer;
+}
 
 
-.messagePane {
-    height: 100%;
-    flex-grow: 1;
+#message-pane-container {
+    flex-grow: 1; /*positioning on page*/
     flex-shrink: 0;
-    flex-basis: 1;
-    background-color: $message_pane_color;
-}
-.contactPane {
-    width: 100%;
-    background-color: $contact_pane_color;
-    height: 100px;
+    flex-basis: 0px; /*IMPORTANT(otherwise text extends out*/
 }
 
-#contactPaneHide {
+#contact-pane-container {
+    height: 100%;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+#message-pane {
+    height: 100%;
+    width: 100%;
+    background-color: $messagePane_color;
+    display: flex;
+    flex-direction: column; /*align children vertically*/
+}
+
+#contact-pane {
+    background-color: green;
+}
+
+.flexHide {
     display: none;
 }
 
-.navbar {
+#navbar {
     width: 100%;
     height: 80px;
-    background-color: blue;
+    background-color: $navbar_color;
     display: flex;
+    flex-shrink: 0;
+    flex-grow: 0;
 }
+
+#interaction-box {
+    background-color: $interactionBox_color;
+    width: 100%;
+    margin-top: auto;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+#message-box {
+    background-color: bisque;
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+#message-entry {
+    margin: 10px 0;
+    width: 100%;
+    padding: 8px;
+    align-self: center;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    max-height: 100px;
+    overflow-y: auto;
+    overflow-wrap: anywhere;
+    background-color: $messsageEntry_color;
+}
+
+#send-message-button {
+    border: none;
+    background-color: yellow;
+    height: 50px;
+    width: 50px;
+    display: block;
+    margin: 0 auto;
+}
+#send-message-button:hover {
+    cursor: pointer;
+}
+
+#interaction-box-menu {
+    background-color: cyan;
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+}
+
+#interaction-box-menu-row {
+    background-color: crimson;
+    height: 50px;
+    flex-grow: 1;
+    flex-shrink: 0;
+    align-self: center;
+}
+
+#messages-container {
+    background-color: firebrick;
+    width: 100%;
+    flex-grow: 1; /*target size is 0px, but extend out to fill empty space*/
+    flex-shrink: 0; /*allows overflow to work*/
+    overflow-y: auto;
+    flex-basis: 0px;
+}
+
+%message-container {
+    display: inline-block;
+    width: 100%;
+    padding: 7px;
+    box-sizing: border-box;
+    vertical-align: top; /*gets rid of weird space in between messages*/
+}
+
+.from-container {
+    @extend %message-container;
+    background-color: orangered;
+}
+
+.to-container {
+    @extend %message-container;
+    background-color: blueviolet;
+}
+
+%message {
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    max-width: 45%;
+    overflow-wrap: anywhere;
+}
+
+.from {
+    @extend %message;
+    background-color: $from_color;
+    color: $from_tcolor;
+    margin-left: 10px;
+    float: left;
+}
+
+.to {
+    @extend %message;
+    background-color: $to_color;
+    color: $to_tcolor;
+    margin-right: 10px;
+    float: right;
+}
+
+.contact {
+    background-color: $contact_color;
+    padding: 20px;
+    display: block;
+    border: none;
+    text-align: left;
+    width: 100%;
+}
+
+.contact:hover {
+    cursor: pointer;
+}
+
+.contact .displayname {
+    background-color: lime;
+    font-family: Roboto, Arial;
+    font-size: 25px;
+    font-weight: bold;
+    color: $contact_displayname_tcolor;
+}
+
+.contact .charityMessage {
+    margin-top: 10px;
+    background-color: cadetblue;
+    font-family: Arial, Helvetica, sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: $contact_message_tcolor;
+
+}
+
 
 @media only screen and (max-width: 700px) {
 
 }
 
 @media only screen and (min-width: 700px) {
-    .contactPane {
+    #contact-pane-container {
         width: 300px;
     }
-
-    #openContactButton {
+    
+    /*contact menu button only for mobile*/
+    #open-contact-button {
         display: none;
-        /*contact menu button only for mobile*/
     }
 
     /*For desktop applications showing/hiding contact pane does not apply, so just automatically show*/
-    #contactPaneHide {
-        display: flex;
+    .flexHide {
+        display: block;
     }
 }
 
 @media only screen and (min-width: 1200px) {
-    .contactPane {
+    #contact-pane-container {
         width: 500px;
     }
 
-    .navbar {
+    #navbar {
         height: 90px;
     }
 

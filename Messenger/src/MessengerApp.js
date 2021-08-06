@@ -21,22 +21,20 @@ class BasePage extends React.Component {
 
    render(){
       return(
-         <div class="page">
-            <div class="navbar">
-               <Navbar toggleMobileView = {this.toggleOnlyMessagePane} />
-            </div>
-            <div class="container">
+         <div id="page">
+            <Navbar toggleMobileView = {this.toggleOnlyMessagePane} />
+            <div id="container">
                {
                   this.state.mobileMessagePaneToggle ? (
                      /*for mobile*/
                      <>
-                        <ContactPane showId={"contactPaneHide"}/>
-                        <MessagePane/>
+                        <ContactPane show={"flexHide"}/>
+                        <MessagePane show={""}/>
                      </>
                   ) : (
                      <>
-                        <ContactPane showId={"contactPageShow"}/>
-                        <MessagePane/>
+                        <ContactPane show={""}/>
+                        <MessagePane show={"flexHide"}/>
                      </>
                   )
                }
