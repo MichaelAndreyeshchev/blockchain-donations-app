@@ -6,7 +6,7 @@ import signUpCSS from './signUp.module.css'
 function Signup() {
     return (
         <React.Fragment>
-            <div className="container-sm">
+            <div className="container-sm" id={signUpCSS.container}>
                 <div className="row justify-content-sm-center">
                     <div className="col col-md-6" id={signUpCSS.signup}>
 
