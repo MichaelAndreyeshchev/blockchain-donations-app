@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
 
 :root {
-    --grey: #b8b8b8;
-    --dark-grey: #5d5d5d;
+    --lightgreen: #b2e0b2;
+    --darkgreen: #5c915c;
     --white: #ffffff;
+    
 }
 
 * {
@@ -14,7 +15,7 @@
 
 main {
     font-family: 'Poppins', sans-serif;
-    background: var(--grey);
+    background: var(--lightgreen);
     padding: 30px 0;
 }
 
@@ -99,7 +100,7 @@ main {
     min-height: 250px;
     border-radius: 20px;
 
-    background: var(--dark-grey);
+    background: var(--darkgreen);
 
     align-self: flex-end;
     display: flex;
@@ -171,7 +172,7 @@ main {
 
 .container-donors {
     border-radius: 10px;
-    background: var(--dark-grey);
+    background: var(--darkgreen);
     color: var(--white);
     padding: 15px 0;
     display: flex;
@@ -191,12 +192,12 @@ main {
     width: 95%;
     padding: 10px 20px;
     border-radius: 10px;
-    background: var(--grey);
+    background: var(--lightgreen);
     overflow-x: auto;
 }
 
 #donor-table {
-    color: var(--dark-grey);
+    color: var(--darkgreen);
 }
 
 @media screen and (max-width: 1000px) {

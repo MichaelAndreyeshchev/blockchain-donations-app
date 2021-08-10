@@ -11,7 +11,7 @@ ReactDOM.render(
     <Auth0Provider
     domain="cryptonate.us.auth0.com"
     clientId="lR9D8s7bwWwCJKcw3X1fhsnGaBtjTGw2"
-    redirectUri={'https://localhost:3000/portalpage'}>
+    redirectUri={'http://localhost:3000/portalpage'}>
       <App />
     </Auth0Provider>
   </BrowserRouter>,
