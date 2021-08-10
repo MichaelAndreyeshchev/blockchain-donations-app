@@ -1,7 +1,9 @@
 import NavCSS from './Navigation.module.css';
 import { Link } from 'react-router-dom';
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Navigation = () => {
+  const { loginWithRedirect } = useAuth0();
   return (
     <nav>
       <ul>
@@ -27,11 +29,13 @@ const Navigation = () => {
           <Link to="/portalpage">Portal</Link>
         </li>
         <li style={{ float: 'right' }}>
-          <Link to="/signin">Login</Link>
+          <Link to="newSignIn">SIGNIN</Link>
         </li>
+        
         <li style={{ float: 'right' }}>
-          <Link to="/signup">Sign up</Link>
+          <Link to="newSignUp">SIGNUP</Link>
         </li>
+
       </ul>
     </nav>
   );

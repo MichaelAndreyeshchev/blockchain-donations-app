@@ -13,6 +13,8 @@ import signup from './components/signup';
 import donationlisst from './components/donationlisst';
 import Footer from './components/Footer';
 import faq from './components/faq';
+import newSignIn from './components/newSignUp';
+import newSignUp from './components/newSignIn';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
@@ -32,6 +34,9 @@ function App() {
                 <Route exact path ='/DonationStatistics' component = {DonationStatistics} />
                 <Route exact path ='/PreviousDonations' component = {PreviousDonations} />
                 <Route exact path='/faq' component={faq} />
+                <Route exact path = '/CreateDonation' component = {CreateDonation}/>
+                <Route exact path = '/newSignIn' component = {newSignIn}/>
+                <Route exact path = '/newSignUp' component = {newSignUp}/>
                 
             </Router>
             <Footer />
