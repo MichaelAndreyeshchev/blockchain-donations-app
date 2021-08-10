@@ -164,16 +164,16 @@ function Donationlist() {
                         {
                             state.donations.map((item) => {
                                 return <div className="col-3 ">
-                                    <div className="card " style={{ backgroundColor: "#5d5d5d", width: '100%', borderRadius: "30px" }}>
+                                    <div className="card " style={{ backgroundColor: "#5c915c", width: '100%', borderRadius: "30px" }}>
                                         <img src="..." className="card-img-top" alt="..." />
                                         <div className="card-body" style={{}}>
                                             <h5 className="card-title" style={{ color: "white" }}>{item.title}</h5>
                                             <p className="card-text" style={{ color: "white" }}>{item.Funds}</p>
                                             <div class="progress">
-                                                <div class="progress-bar" role="progressbar" style={{width: "25%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                                                <div class="progress-bar" role="progressbar" style={{backgroundColor: "#b2e0b2", width: "25%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
                                             </div>
-                                            <p className="card-text" style={{ color: "white" }}>{item.category}</p>
-                                            <a href="#" className="btn btn-primary">{item.pageUrl}</a>
+                                            <p className="card-text" style={{color: "white" }}>{item.category}</p>
+                                            <a href="#" className="btn btn-primary" style={{ backgroundColor: "#b2e0b2" }}>{item.pageUrl}</a>
                                         </div>
                                     </div>
                                 </div>

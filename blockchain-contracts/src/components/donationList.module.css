@@ -51,7 +51,7 @@ ul{
     bottom: 3rem;
     left: 5rem;
     position: fixed;
-    background-color:#404040;
+    background-color:#5c915c;
     color:white
   }
 
@@ -72,10 +72,12 @@ ul{
 }
 
 #container{
-  background-color: #b8b8b8;
+  background-color: #b2e0b2;
   height: 90vh;
 }
 
 h1{
   color: white;
 }
+
+/*--darkgreen: #5c915c;*/
