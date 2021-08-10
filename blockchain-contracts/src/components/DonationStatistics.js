@@ -51,7 +51,7 @@ return (
     <div className = {DonationStatisticsCSS.buttonGroup}>
       <button><Link to = "/PreviousDonations">Track previous donations</Link></button>
 
-      <button><Link to = "/CreateDonation">Begin a new donation</Link></button>
+      {/*<button><Link to = "/CreateDonation">Begin a new donation</Link></button>*/}
 
       <button><Link to = "/DonationStatistics">View your donation statistics</Link></button>
     </div>
