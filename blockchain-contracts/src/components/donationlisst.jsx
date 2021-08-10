@@ -5,6 +5,7 @@ import donationListCSS from './donationList.module.css';
 import data from './data/test.json';
 import Pagination from './pagination'
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import InfiniteScroll from 'react-infinite-scroll-component';
 
 /*donation list would be fetch from server, currently using test.json to test*/
 const options = [{ sortBy: ["Name", "Funds", ""] }, { category: ["A", "B", "C", ""] }];
@@ -12,6 +13,7 @@ function Donationlist() {
     const [state, setState] = useState({
         donations: data.donations,
         keyword: '',
+        page:1,
         options: {
             sortBy: "",
             category: ""
@@ -62,6 +64,49 @@ function Donationlist() {
         return 0;
     }
 
+    function createRow() { //return array of rows
+        const rows = [];
+        for (let i = 0; i < state.donations.length; i += 4) { //ever 4 items a row
+            rows.push(<div className="row" style={{marginBottom:"1rem"}}>{donationMapping(i)}</div>)
+        }
+        return rows;
+
+    }
+
+    function donationMapping(start) {
+        let sliced=[];
+        if (start + 4 > state.donations.length) {
+            sliced = state.donations.slice(start, -1)
+        } else {
+            sliced = state.donations.slice(start, start + 4)
+        }
+
+
+        const list = sliced.map((item, index, array) => {
+
+            return <div className="col-3 "><div className="card " style={{ backgroundColor: "#4873b5", width: '100%', borderRadius: "30px" }}>
+                <img src="..." className="card-img-top" alt="..." />
+                <div className="card-body" style={{}}>
+                    <h5 className="card-title" style={{ color: "white" }}>{item.title}</h5>
+                    <p className="card-text" style={{ color: "white" }}>{item.Funds}</p>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style={{ backgroundColor: "#c4dbff", width: "25%" }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                    </div>
+                    <p className="card-text" style={{ color: "white" }}>{item.category}</p>
+                    <a href="#" className="btn btn-primary" style={{ backgroundColor: "#c4dbff" }}>{item.pageUrl}</a>
+                </div>
+            </div>
+            </div>
+
+        }
+
+
+
+        )
+        console.log(list)
+        return list;
+    }
+
     function sortingString(s1, s2) {
         let x1 = s1.title.toUpperCase();
         let x2 = s2.title.toUpperCase();
@@ -72,6 +117,11 @@ function Donationlist() {
             return 1;
         }
         return 0;
+    }
+
+    function fetchDonation() {
+        let newlist = state.donations.concat(data.donations)
+        setState((pre) => ({ ...pre, donations: newlist,page:pre.page+1 }))
     }
 
     function handleChange() {
@@ -160,28 +210,34 @@ function Donationlist() {
                     </nav>
                 </div>
                 <div className="main container-fluid">
-                    <div className="row">
-                        {
-                            state.donations.map((item) => {
-                                return <div className="col-3 ">
-                                    <div className="card " style={{ backgroundColor: "#4873b5", width: '100%', borderRadius: "30px" }}>
-                                        <img src="..." className="card-img-top" alt="..." />
-                                        <div className="card-body" style={{}}>
-                                            <h5 className="card-title" style={{ color: "white" }}>{item.title}</h5>
-                                            <p className="card-text" style={{ color: "white" }}>{item.Funds}</p>
-                                            <div class="progress">
-                                                <div class="progress-bar" role="progressbar" style={{backgroundColor: "#c4dbff", width: "25%"}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-                                            </div>
-                                            <p className="card-text" style={{color: "white" }}>{item.category}</p>
-                                            <a href="#" className="btn btn-primary" style={{ backgroundColor: "#c4dbff" }}>{item.pageUrl}</a>
-                                        </div>
-                                    </div>
-                                </div>
 
-                            })
+                    <InfiniteScroll
+                        dataLength={state.donations.length} //This is important field to render the next data
+                        next={
+                            fetchDonation
+
                         }
-                    </div>
+                        hasMore={true}
+                        loader={<h4>Loading...</h4>}
+                        endMessage={
+                            <p style={{ textAlign: 'center' }}>
+                                <b>Yay! You have seen it all</b>
+                            </p>
+                        }
+
+                    >
+
+
+                        {
+
+                            createRow()
+                        }
+
+
+                    </InfiniteScroll>
                 </div>
+
+
 
                 <Pagination />
             </div>
