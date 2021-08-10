@@ -1,3 +1,5 @@
+import firebase from "firebase";
+
 const firebaseConfig = {
   apiKey: "AIzaSyA_60EDIT1JxC1eDuUEhUzvwiYyU8R013k",
   authDomain: "messenger-84dbf.firebaseapp.com",
