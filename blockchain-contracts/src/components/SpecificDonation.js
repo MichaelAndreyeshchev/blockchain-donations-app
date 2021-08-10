@@ -34,11 +34,8 @@ const SpecificDonation = () => {
                         </div>
                     </div>
                     <p className={style['description-container__description']}>
-                        Description for the donation~~Lorem ipsum dolor sit amet
-                        consectetur, adipisicing elit. Architecto neque ad
-                        expedita modi beatae laudantium ea labore maxime dolorum
-                        adipisci autem, voluptate, voluptatum quis doloremque
-                        vero hic cumque voluptates distinctio!
+                        Description of the campaign - how much money has been raised, 
+                        where does the money go, etc.
                     </p>
                     <h2
                         className={style['description-container__total-raised']}

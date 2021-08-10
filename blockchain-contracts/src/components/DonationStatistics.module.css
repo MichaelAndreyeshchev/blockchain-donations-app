@@ -44,7 +44,7 @@
   
     .buttonGroup button:hover 
     {
-      background-color:lightgreen;
+      background-color:#c4dbff;
       cursor:pointer;
       border:5px black;
     }

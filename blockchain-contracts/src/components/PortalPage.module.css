@@ -5,7 +5,7 @@ a{
 
 body
 {
-  background-color: rgb(178, 224, 178) !important;
+  background-color: #c4dbff!important;
 }
 
 .yourportaltext h1 
@@ -53,7 +53,7 @@ body
 
   .buttonGroup button:hover 
   {
-    background-color:rgb(178, 224, 178);
+    background-color: #c4dbff;
     cursor:pointer;
     border:5px black;
   }

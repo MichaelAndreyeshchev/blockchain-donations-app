@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
 
 :root {
-    --lightgreen: #b2e0b2;
-    --darkgreen: #5c915c;
+    --lightblue: #c4dbff;
+    --darkblue: #4873b5;
     --white: #ffffff;
 }
 
@@ -23,7 +23,7 @@ textarea {
     width: 100%;
     min-height: 100vh;
     padding: 2rem;
-    background-color: var(--lightgreen);
+    background-color: var(--lightblue);
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -44,7 +44,7 @@ textarea {
 }
 
 .contactForm {
-    background-color: var(--darkgreen);
+    background-color: var(--darkblue);
     position: relative;
 }
 
@@ -118,7 +118,7 @@ textarea::-ms-input-placeholder {
     background-color: #fff;
     border: 2px solid #fafafa;
     font-size: 0.95rem;
-    color: var(--darkgreen);
+    color: var(--darkblue);
     line-height: 1;
     border-radius: 25px;
     outline: none;
@@ -138,7 +138,7 @@ textarea::-ms-input-placeholder {
 }
 
 .contactInfo .title {
-    color: var(--darkgreen);
+    color: var(--darkblue);
 }
 
 .text {
@@ -157,7 +157,7 @@ textarea::-ms-input-placeholder {
 }
 
 .information > h2 {
-    color: var(--darkgreen);
+    color: var(--darkblue);
     font-size: 1rem;
 }
 
@@ -191,7 +191,7 @@ textarea::-ms-input-placeholder {
     width: 35px;
     height: 35px;
     border-radius: 5px;
-    background: linear-gradient(45deg, #c0c0c0, var(--darkgreen));
+    background: linear-gradient(45deg, #c0c0c0, var(--darkblue));
     color: var(--white);
     text-align: center;
     line-height: 35px;

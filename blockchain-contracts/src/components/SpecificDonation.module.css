@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
 
 :root {
-    --lightgreen: #b2e0b2;
-    --darkgreen: #5c915c;
+    --lightblue: #c4dbff;
+    --darkblue: #4873b5;
     --white: #ffffff;
     
 }
@@ -15,7 +15,7 @@
 
 main {
     font-family: 'Poppins', sans-serif;
-    background: var(--lightgreen);
+    background-color: var(--lightblue) !important;
     padding: 30px 0;
 }
 
@@ -31,6 +31,7 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    color:white;
 }
 
 .description-container {
@@ -42,6 +43,7 @@ main {
 
 .charity-name {
     text-align: left;
+    color:black !important;
 }
 
 .tag-container {
@@ -68,11 +70,13 @@ main {
     max-width: 700px;
     font-size: clamp(0.8rem, 1vw, 1.3rem);
     text-align: justify;
+    color:black !important;
 }
 
 .description-container__total-raised {
     font-size: clamp(1rem, 2.5vw, 2rem);
     text-align: left;
+
 }
 
 .button {
@@ -100,7 +104,7 @@ main {
     min-height: 250px;
     border-radius: 20px;
 
-    background: var(--darkgreen);
+    background: var(--darkblue);
 
     align-self: flex-end;
     display: flex;
@@ -172,7 +176,7 @@ main {
 
 .container-donors {
     border-radius: 10px;
-    background: var(--darkgreen);
+    background: var(--darkblue);
     color: var(--white);
     padding: 15px 0;
     display: flex;
@@ -192,12 +196,12 @@ main {
     width: 95%;
     padding: 10px 20px;
     border-radius: 10px;
-    background: var(--lightgreen);
+    background: var(--lightblue);
     overflow-x: auto;
 }
 
 #donor-table {
-    color: var(--darkgreen);
+    color: var(--darkblue);
 }
 
 @media screen and (max-width: 1000px) {
