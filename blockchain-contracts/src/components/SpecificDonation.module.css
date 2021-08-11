@@ -1,250 +1,259 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
 
 :root {
-    --lightblue: #c4dbff;
-    --darkblue: #4873b5;
-    --white: #ffffff;
-    
+  --lightblue: #c4dbff;
+  --darkblue: #4873b5;
+  --white: #ffffff;
 }
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 main {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--lightblue) !important;
-    padding: 30px 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--lightblue) !important;
+  padding: 30px 0;
 }
 
 .container {
-    margin: 0 auto 30px;
-    padding: 0;
-    max-width: 90%;
+  margin: 0 auto 30px;
+  padding: 0;
+  max-width: 90%;
 }
 
 /* Charity_content Section */
 
 .container--charity {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    color:white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white;
 }
 
 .description-container {
-    width: 50%;
-    text-align: justify;
-    margin-bottom: 0;
-    position: relative;
+  width: 50%;
+  text-align: justify;
+  margin-bottom: 0;
+  position: relative;
 }
 
 .charity-name {
-    text-align: left;
-    color:black !important;
+  text-align: left;
+  color: black !important;
 }
 
 .tag-container {
-    max-width: 100%;
-    margin: 15px 0;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+  max-width: 100%;
+  margin: 15px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .tag-container__wrapper {
-    border-radius: 100px;
-    padding: 2px 20px;
-    border: 2px solid var(--white);
-    margin: 5px;
-    color: var(--white);
-    font-size: 13px;
-    font-weight: 500;
+  border-radius: 100px;
+  padding: 2px 20px;
+  border: 2px solid var(--white);
+  margin: 5px;
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 500;
 }
 
 .description-container__description {
-    width: 90%;
-    max-width: 700px;
-    font-size: clamp(0.8rem, 1vw, 1.3rem);
-    text-align: justify;
-    color:black !important;
+  width: 90%;
+  max-width: 700px;
+  font-size: clamp(0.8rem, 1vw, 1.3rem);
+  text-align: justify;
+  color: black !important;
 }
 
 .description-container__total-raised {
-    font-size: clamp(1rem, 2.5vw, 2rem);
-    text-align: left;
-
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  text-align: left;
 }
 
 .button {
-    width: 60%;
-    max-width: 240px;
-    border-radius: 100px;
-    border: none;
-    padding: 8px 0;
-    font-size: clamp(0.8rem, 2vw, 2.5rem);
-    font-weight: 600;
-    background: #fff;
-    /* transition: 0.5s background ease-in-out; */
+  width: 60%;
+  max-width: 240px;
+  border-radius: 100px;
+  border: none;
+  padding: 8px 0;
+  font-size: clamp(0.8rem, 2vw, 2.5rem);
+  font-weight: 600;
+  background: #fff;
+  /* transition: 0.5s background ease-in-out; */
 }
 
 .button:hover {
-    background: #151515;
-    color: #fff;
+  background: #151515;
+  color: #fff;
 }
 
 .charity-profile-card {
-    width: 30%;
-    max-width: 500px;
-    min-width: 200px;
-    height: 100%;
-    min-height: 250px;
-    border-radius: 20px;
+  width: 30%;
+  max-width: 500px;
+  min-width: 200px;
+  height: 100%;
+  min-height: 250px;
+  border-radius: 20px;
 
-    background: var(--darkblue);
+  background: var(--darkblue);
 
-    align-self: flex-end;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .charity-profile__image {
-    width: 50px;
-    height: 50px;
-    border-radius: 999px;
-    display: inline;
-    background: var(--white);
+  width: 50px;
+  height: 50px;
+  border-radius: 999px;
+  display: inline;
+  background: var(--white);
 }
 
 .charity-profile__name {
-    display: inline;
-    font-size: clamp(1rem, 2.5vw, 2rem);
+  display: inline;
+  font-size: clamp(1rem, 2.5vw, 2rem);
 }
 
 .charity-profile__total-donor {
-    margin: 10px 0;
-    font-size: clamp(0.8rem, 2.5vw, 1.1rem);
-    font-weight: 400;
+  margin: 10px 0;
+  font-size: clamp(0.8rem, 2.5vw, 1.1rem);
+  font-weight: 400;
 }
 
 #charity--progress {
-    width: 75%;
-    height: 30px;
-    border-radius: 999px;
-    margin: 10px 0;
-    position: relative;
-    font-size: 0.75rem;
+  width: 75%;
+  height: 30px;
+  border-radius: 999px;
+  margin: 10px 0;
+  position: relative;
+  font-size: 0.75rem;
 }
 
 .charity-target {
-    position: absolute;
-    right: 0;
-    height: 100%;
-    margin-right: 5px;
-    display: flex;
-    align-items: center;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
 }
 
 .charity-target__description {
-    color: black;
-    font-weight: 700;
+  color: black;
+  font-weight: 700;
 }
 
 .charity-social {
-    width: 70%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-weight: 200;
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: 200;
 }
 
 .charity-social__icon {
-    font-size: clamp(1rem, 1.5vw, 1.8rem);
-    margin-right: 5px;
+  font-size: clamp(1rem, 1.5vw, 1.8rem);
+  margin-right: 5px;
 }
 
 .charity-social__description {
-    font-size: clamp(0.8rem, 1vw, 1.3rem);
+  font-size: clamp(0.8rem, 1vw, 1.3rem);
 }
 
 /* container-donors Section */
 
-.container-donors {
-    border-radius: 10px;
-    background: var(--darkblue);
-    color: var(--white);
-    padding: 15px 0;
-    display: flex;
-    margin: 0 auto;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+.container--donors {
+  border-radius: 10px;
+  background: var(--darkblue);
+  color: var(--white);
+  padding: 15px 0;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .container-donors__title {
-    width: 95%;
-    margin-bottom: 5px;
+  width: 95%;
+  margin-bottom: 5px;
 }
 
 .table-container {
-    width: 95%;
-    padding: 10px 20px;
-    border-radius: 10px;
-    background: var(--lightblue);
-    overflow-x: auto;
+  width: 95%;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: var(--lightblue);
+  overflow-x: auto;
 }
 
 #donor-table {
-    color: var(--darkblue);
+  color: var(--darkblue);
+}
+
+.discussion--container {
+  margin: 30px auto 10px;
+  border-radius: 10px;
+  background: var(--darkblue);
+  color: var(--white);
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 @media screen and (max-width: 1000px) {
-    .charity-social {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+  .charity-social {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .container--charity {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+  .container--charity {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .description-container {
-        width: 100%;
-        margin-bottom: 20px;
-        text-align: center;
-    }
+  .description-container {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+  }
 
-    .charity-profile-card {
-        width: 40%;
-        align-self: center;
-    }
+  .charity-profile-card {
+    width: 40%;
+    align-self: center;
+  }
 
-    .tag-container__wrapper {
-        font-size: 10px;
-    }
+  .tag-container__wrapper {
+    font-size: 10px;
+  }
 
-    .charity--progress {
-        font-size: 0.65rem;
-    }
+  .charity--progress {
+    font-size: 0.65rem;
+  }
 
-    .description-container__total-raised {
-        text-align: center;
-    }
+  .description-container__total-raised {
+    text-align: center;
+  }
 
-    .button {
-        position: relative;
-        /* left: 50%; */
-        /* transform: translateX(50%); */
-    }
+  .button {
+    position: relative;
+  }
 }

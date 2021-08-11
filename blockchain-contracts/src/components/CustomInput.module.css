@@ -1,0 +1,84 @@
+:root {
+  --lightblue: #c4dbff;
+  --darkblue: #4873b5;
+  --white: #ffffff;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.input-box {
+  background: var(--darkblue);
+  border: none;
+  border-radius: 3px;
+  margin-top: 5px;
+  padding-left: 5px;
+  color: var(--lightblue);
+}
+
+.input-box::placeholder {
+  color: var(--lightblue);
+}
+
+.input-box:focus {
+  outline: none;
+}
+.input-div {
+  background: var(--lightblue);
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.input-name {
+  color: var(--darkblue);
+}
+
+.arrow-left {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid var(--lightblue);
+  margin-top: 20px;
+}
+.btn-div {
+  margin-top: 8px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.post-btn {
+  border: 2px solid var(--lightblue);
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 5px 14px;
+  color: var(--darkblue);
+  font-weight: bolder;
+  margin-right: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.post-btn:active {
+  outline: none;
+}
+.cancel-btn {
+  color: var(--darkblue);
+  text-align: center;
+  background-size: 200% auto;
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: 2px solid var(--lightblue);
+  font-weight: bolder;
+  font-size: 16px;
+  cursor: pointer;
+}
+.cancel-btn:focus {
+  outline: 0;
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "userId": "01a",
+    "comId": "012",
+    "fullName": "Random Person",
+    "avatarUrl": "https://ui-avatars.com/api/name=Random&background=random",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, ducimus.",
+    "replies": [
+      {
+        "userId": "02a",
+        "comId": "013",
+
+        "fullName": "Random Person",
+        "avatarUrl": "https://ui-avatars.com/api/name=Random&background=random",
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, ducimus."
+      },
+      {
+        "userId": "01a",
+        "comId": "014",
+
+        "fullName": "Random Person",
+        "avatarUrl": "https://ui-avatars.com/api/name=Random&background=random",
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, ducimus."
+      }
+    ]
+  },
+  {
+    "userId": "02a",
+    "comId": "07",
+    "fullName": "Random Person",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, ducimus.",
+    "avatarUrl": "https://ui-avatars.com/api/name=Random&background=random"
+  },
+  {
+    "userId": "02a",
+    "comId": "015",
+    "fullName": "Random Person",
+    "avatarUrl": "https://ui-avatars.com/api/name=Random&background=random",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, ducimus.",
+    "replies": [
+      {
+        "userId": "01b",
+        "comId": "016",
+
+        "fullName": "Random Person",
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, ducimus.",
+        "avatarUrl": "https://ui-avatars.com/api/name=Random&background=random"
+      }
+    ]
+  },
+  {
+    "userId": "02b",
+    "comId": "017",
+    "fullName": "Random Person",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, ducimus.",
+    "avatarUrl": "https://ui-avatars.com/api/name=Random&background=random"
+  }
+]
