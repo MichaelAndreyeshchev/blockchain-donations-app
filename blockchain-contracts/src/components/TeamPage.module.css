@@ -16,7 +16,7 @@ html {
 }
 
 .card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2);
 }
 
 .container {
@@ -31,7 +31,7 @@ html {
 }
 
 .title {
-  color: grey;
+  color: black;
 }
 
 .button {
@@ -50,7 +50,8 @@ html {
   background-color: #555;
 }
 
-h1 {
+.bigTitle {
   text-align: center;
   font-size: 32px;
+  color: black;
 }
