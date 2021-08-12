@@ -21,7 +21,7 @@ const CustomInput = ({
           {' '}
           <img
             src='https://ui-avatars.com/api/name=Random&background=random'
-            style={{ width: 80, height: 80 }}
+            style={{ width: 80, height: 80, borderRadius: '100px' }}
           />
           <div className={style.row}>
             <div className={style['arrow-left']}></div>
