@@ -3,7 +3,6 @@ import data from './data/DiscussionBoardData.json';
 import { CommentSection } from 'react-comments-section';
 import 'react-comments-section/dist/index.css';
 import CustomInput from './CustomInput';
-import style from './DiscussionBoard.module.css';
 
 const DiscussionBoard = () => {
   const [comment, setComment] = useState(data);
@@ -32,7 +31,7 @@ const DiscussionBoard = () => {
   };
 
   return (
-    <div className={style.commentSection}>
+    <div className='commentSection'>
       <CommentSection
         currentUser={
           userId && { userId: userId, avatarUrl: avatarUrl, name: name }
