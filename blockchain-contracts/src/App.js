@@ -15,6 +15,7 @@ import Footer from './components/Footer';
 import faq from './components/faq';
 import newSignIn from './components/newSignUp';
 import newSignUp from './components/newSignIn';
+import CreateCampaign from './components/CreateCampaign';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
@@ -35,9 +36,9 @@ function App() {
                 <Route exact path ='/PreviousDonations' component = {PreviousDonations} />
                 <Route exact path='/faq' component={faq} />
                 <Route exact path = '/CreateDonation' component = {CreateDonation}/>
+                <Route exact path = '/CreateCampaign' component = {CreateCampaign}/>
                 <Route exact path = '/newSignIn' component = {newSignIn}/>
                 <Route exact path = '/newSignUp' component = {newSignUp}/>
-                
             </Router>
             <Footer />
         </div>

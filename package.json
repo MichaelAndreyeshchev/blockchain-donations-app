@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@auth0/auth0-react": "^1.6.0",
+    "chart.js": "^3.5.0",
+    "react-chartjs-2": "^3.0.4",
+    "react-comments-section": "^1.0.7",
+    "react-infinite-scroll-component": "^6.1.0"
+  }
+}

@@ -1,0 +1,67 @@
+.App {
+    background-color: whitesmoke;
+}
+
+h3 {
+    padding: 5px;
+    color: #00bcd4;
+}
+
+input {
+    margin: 5px;
+}
+
+
+.campaign__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+
+.campaign__tags {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.campaign__description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.campaign__time {
+    display: flex;
+    align-tems: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.campaign__goal {
+    display: flex;
+    align-tems: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.campaign__background {
+    display: flex;
+    align-tems: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.campaign__buttons {
+    display: flex;
+    align-tems: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.campaign__buttons > .back {
+    margin-right: 15px;
+}

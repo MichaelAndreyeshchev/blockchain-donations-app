@@ -28,6 +28,9 @@ const Navigation = () => {
         <li>
           <Link to="/portalpage">Portal</Link>
         </li>
+        <li>
+          <Link to="/CreateCampaign">CreateCampaign</Link>
+        </li>
         <li style={{ float: 'right' }}>
           <Link to="newSignIn">SIGNIN</Link>
         </li>
