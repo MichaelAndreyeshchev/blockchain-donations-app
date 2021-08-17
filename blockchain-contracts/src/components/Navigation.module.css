@@ -1,25 +1,43 @@
+
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #abed9d;
+  background-color: linear-gradient(90deg, rgba(104,144,203,1) 0%, rgba(113,164,219,1) 0%, rgba(177,217,224,1) 0%, rgba(196,219,255,1) 100%); ;
+}
+
+.login:hover {
+  background-color: #111;
+  color: white;
 }
 
 li {
   float: left;
+  margin: 10px;
 }
 
 li a {
-  display: block;
-  color: black;
-  text-align: center;
+  border-radius: 30px;
+  border: 0;
+  color: 'black';
+  height: 48px;
   padding: 14px 30px;
-  text-decoration: none;
+  background: #b1d9e0;
 }
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-  background-color: #111;
-  color: white;
+  transform: translateY(-3px);
+  transition: all 0.5s;
+  box-shadow: 0px 0px 35px 3px rgba(196,219,255,0.74);
+  -webkit-box-shadow: 0px 0px 35px 3px rgba(196,219,255,0.74);
+  -moz-box-shadow: 0px 0px 35px 3px rgba(196,219,255,0.74);
+}
+
+img {
+  margin: 5px 30px;
+  border-radius: 60px;
+  height: 25%;
+  width: 25%;
 }

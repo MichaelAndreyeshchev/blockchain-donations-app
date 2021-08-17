@@ -13,9 +13,10 @@ import signup from './components/signup';
 import donationlisst from './components/donationlisst';
 import Footer from './components/Footer';
 import faq from './components/faq';
-import newSignIn from './components/newSignUp';
-import newSignUp from './components/newSignIn';
+import newSignIn from './components/newSignIn';
 import CreateCampaign from './components/CreateCampaign';
+import logOut from './components/logOut';
+import Profile from './components/Profile';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
@@ -38,7 +39,8 @@ function App() {
                 <Route exact path = '/CreateDonation' component = {CreateDonation}/>
                 <Route exact path = '/CreateCampaign' component = {CreateCampaign}/>
                 <Route exact path = '/newSignIn' component = {newSignIn}/>
-                <Route exact path = '/newSignUp' component = {newSignUp}/>
+                <Route exact path = '/logOut' component = {logOut}/>
+                <Route exact path = '/Profile' component = {Profile}/>
             </Router>
             <Footer />
         </div>

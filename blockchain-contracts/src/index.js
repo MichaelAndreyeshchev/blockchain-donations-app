@@ -9,8 +9,8 @@ import { Auth0Provider } from '@auth0/auth0-react';
 ReactDOM.render(
   <BrowserRouter>
     <Auth0Provider
-    domain="cryptonate.us.auth0.com"
-    clientId="lR9D8s7bwWwCJKcw3X1fhsnGaBtjTGw2"
+    domain="dev-171e4f0g.us.auth0.com"
+    clientId="gxIfEyKEM7I8Iiysy5bsoDuRr7ZGw7b2"
     redirectUri={'http://localhost:3000/portalpage'}>
       <App />
     </Auth0Provider>

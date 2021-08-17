@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@auth0/auth0-react": "^1.6.0",
+    "@auth0/auth0-spa-js": "^1.17.0",
     "@fortawesome/fontawesome-free": "^5.15.3",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
@@ -16,10 +17,12 @@
     "@testing-library/user-event": "^12.1.10",
     "async": "^3.2.1",
     "bootstrap": "^5.0.2",
+    "bulma": "^0.9.3",
     "chain-function": "^1.0.1",
     "chart.js": "^3.5.0",
     "material-ui": "^0.20.2",
     "react": "^17.0.2",
+    "react-bootstrap": "^2.0.0-beta.4",
     "react-chartjs-2": "^3.0.4",
     "react-comments-section": "^1.0.7",
     "react-dom": "^17.0.2",
@@ -55,5 +58,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "CreateCampaignDetails.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

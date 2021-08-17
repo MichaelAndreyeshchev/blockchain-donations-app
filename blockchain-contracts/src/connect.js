@@ -1,29 +1,28 @@
-var Connection = require('tedious').Connection;
-var Request = require('tedious').Request;
-var TYPES = require('tedious').TYPES;
-
+const { Connection, Request } = require("tedious");
 // Create connection to database
-var config = {
-  server: 'cryptonate.database.windows.net:1433',
+const config = {
   authentication: {
-      type: 'default',
       options: {
           userName: 'Cryptonate@cryptonate', // update me
           password: '666dcd94-efce-11eb-9a03-0242ac130003' // update me
-      }
+      },
+      type: 'default'
   },
+  server: 'cryptonate.database.windows.net',
   options: {
-      database: 'Cryptonate_db'
+      database: 'Cryptonate_db',
+      encrypt: true,
+      port: 1433
   }
 }
-var connection = new Connection(config);
+const connection = new Connection(config);
 
 // Attempt to connect and execute queries if connection goes through
-console.log("HELLO WORLD!")
-connection.on('connect', function(err) {
+connection.on('connect', err => {
   if (err) {
     console.log(err);
   } else {
     console.log('Connected');
   }
 });
+connection.connect();
