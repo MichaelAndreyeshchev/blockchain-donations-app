@@ -67,21 +67,13 @@ const DonationStatistics = () => {
         </div>
 
         <div className={DonationStatisticsCSS.portalBox}>
-          <div className={DonationStatisticsCSS.buttonGroup}>
-            <button>
+          <div className={DonationStatisticsCSS['donation-line-graph']}>
+            <div className={DonationStatisticsCSS.buttonGroup}>
               <Link to='/PreviousDonations'>Track previous donations</Link>
-            </button>
-
-            {/*<button><Link to = "/CreateDonation">Begin a new donation</Link></button>*/}
-
-            <button>
               <Link to='/DonationStatistics'>
                 View your donation statistics
               </Link>
-            </button>
-          </div>
-
-          <div className={DonationStatisticsCSS['donation-line-graph']}>
+            </div>
             <h2>Donations Over Time:</h2>
             <Line data={lineData} options={lineOptions} />
           </div>
