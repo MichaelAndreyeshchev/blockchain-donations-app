@@ -1,9 +1,10 @@
 .container {
   width: 100%;
-  max-height: 100vh;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   position: relative;
+  border: 1px solid red;
 }
 
 .wrapper {
@@ -18,4 +19,64 @@
 
 .contain {
   overflow-x: hidden;
+}
+
+/* Steps section */
+
+.steps__title {
+  font-size: 3rem;
+  margin-bottom: 1.5em;
+}
+
+.arrow-container {
+  position: relative;
+  min-height: 500px;
+  border: 1px solid yellow;
+}
+
+.steps-container {
+  width: 300px;
+  position: absolute;
+  /* border: 1px solid blue; */
+}
+
+.steps-container > h2 {
+  font-size: 2rem;
+  width: fit-content;
+  /* border: 1px solid green; */
+}
+
+.steps-container > p {
+  font-size: 1rem;
+  width: fit-content;
+  /* border: 1px solid green; */
+}
+
+.step--one {
+  top: 0;
+  left: 0;
+}
+
+.step--two {
+  bottom: 20%;
+  left: 16%;
+}
+
+.step--three {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.step--four {
+  bottom: 10%;
+  right: 25%;
+}
+
+.step--five {
+  top: 0;
+  right: 0;
+}
+
+.hello {
 }
