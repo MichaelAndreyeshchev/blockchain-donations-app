@@ -4,10 +4,10 @@ import HomeCSS from './Home.module.css';
 const Home = () => {
   return (
     <React.Fragment>
-      <ParticleBackground />
       <div className={`container-flex ${HomeCSS.contain}`}>
         {/* Create account section */}
         <section className={HomeCSS.container}>
+          <ParticleBackground />
           <div className={'row my-5' + ' ' + HomeCSS.wrapper}>
             <div className='col text-center'>
               <h2>Create a Cryptonate Account</h2>

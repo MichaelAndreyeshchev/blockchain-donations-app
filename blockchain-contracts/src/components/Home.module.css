@@ -1,20 +1,21 @@
 .container {
-  margin: 0;
-  padding: 0;
   width: 100%;
   max-height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: relative;
 }
 
 .wrapper {
-  max-width: 100%;
+  width: 100%;
   position: absolute;
   left: 0;
   right: 0;
-  top: 20%;
+  top: 15%;
   margin: auto;
+  border: 1px solid red;
 }
 
 .contain {
-  margin-top: 50px;
   overflow-x: hidden;
 }
