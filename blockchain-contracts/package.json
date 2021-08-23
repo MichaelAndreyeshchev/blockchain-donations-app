@@ -34,13 +34,8 @@
     "sweetalert": "^2.1.2",
     "tedious": "^11.4.0",
     "react-particles-js": "^3.5.3",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
     "react-xarrows": "^2.0.2",
-    "sweetalert": "^2.1.2",
-    "tedious": "^11.4.0",
     "tsparticles": "^1.33.3",
-    "web-vitals": "^1.0.1",
     "web-vitals": "^1.0.1",
     "yarn": "^1.22.11"
   },

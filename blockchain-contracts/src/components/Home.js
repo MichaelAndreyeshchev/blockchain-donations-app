@@ -38,7 +38,9 @@ const Home = () => {
         </section>
 
         {/* Top Campaigns Section */}
-        <section className={HomeCSS.container}>
+        <section
+          className={HomeCSS.container + ' ' + HomeCSS['container--light']}
+        >
           <div className='row my-5'>
             <div className='col d-flex justify-content-center  '>
               <img
