@@ -4,6 +4,8 @@
     "chart.js": "^3.5.0",
     "react-chartjs-2": "^3.0.4",
     "react-comments-section": "^1.0.7",
-    "react-infinite-scroll-component": "^6.1.0"
+    "react-infinite-scroll-component": "^6.1.0",
+    "react-particles-js": "^3.5.3",
+    "react-xarrows": "^2.0.2"
   }
 }
