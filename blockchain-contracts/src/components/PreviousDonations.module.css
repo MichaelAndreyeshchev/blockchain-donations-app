@@ -1,68 +1,72 @@
+:root {
+  --lightblue: #c4dbff;
+  --darkblue: #4873b5;
+  --white: #ffffff;
+}
 
-  .yourportaltext h1
-  {
-    font-size: 80px;
-    color: rgb(122, 122, 122);
-    margin-top: 100px;
-    margin-left: 75px;
-    text-align: left;
-  }
-  
-  .yourportaltext h2
-  {
-    color: rgb(122, 122, 122);
-    margin-top: 25px;
-    margin-left: 85px;
-    text-align: left;
-  }
-  
-    
-    .portalBox 
-    {
-      background: white;
-      padding: 20px;
-      margin-left:75px;
-      margin-bottom:50px;
-      height: 700px;
-      width: 1000px;
-      text-align: left;
-    }
-  
-    .buttonGroup
-    {
-      float:left;
-      border-radius: 25px;
-      font-size: 20px;
-      text-align: left;
-      color: white;
-      margin-left:100px;
-      position:relative;
-      top:-700px;
-    }
-  
-    .buttonGroup button:hover 
-    {
-      background-color:#c4dbff;
-      cursor:pointer;
-      border:5px black;
-    }
-  
-  .yourDonationTracker
-  {
-    color:darkgrey;
-    font-size: 50px;
-    margin-left:240px;
-  }
-  
-  .userDataTable th, .userDataTable td
-  {
-    border: 1px solid #000;
-    border-collapse: collapse;
-    padding:10px;
-  }
-  
-  .userDataTable
-  {
-    margin-top:100px;
-  }
-  
+.yourportaltext h1 {
+  font-size: 80px;
+  color: rgb(122, 122, 122);
+  margin-top: 100px;
+  margin-left: 75px;
+  text-align: left;
+}
+
+.yourportaltext h2 {
+  color: rgb(122, 122, 122);
+  margin-top: 25px;
+  margin-left: 85px;
+  text-align: left;
+}
+
+.portalBox {
+  background: #fff;
+  padding: 20px;
+  height: fit-content;
+  width: 90%;
+  margin: 50px auto;
+  text-align: left;
+}
+
+.buttonGroup {
+  font-size: 20px;
+  text-align: left;
+  position: relative;
+  margin: 2rem 0;
+}
+
+.buttonGroup a {
+  padding: 1rem;
+  margin-right: 1rem;
+  border-radius: 100px;
+  background: var(--darkblue);
+  color: #fff;
+  text-decoration: none;
+}
+
+.buttonGroup a:hover {
+  background-color: var(--lightblue);
+  cursor: pointer;
+}
+
+.yourDonationTracker {
+  color: darkgrey;
+  font-size: 50px;
+  margin-left: 240px;
+}
+
+.userDataTable th,
+.userDataTable td {
+  border: 1px solid #000;
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+.userDataTable {
+  margin-top: 100px;
+}
+
+.table-container {
+  width: 90%;
+  margin: 0 auto;
+}

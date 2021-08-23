@@ -1,59 +1,53 @@
-
-a{
+a {
   text-decoration: none;
 }
 
-body
-{
-  background-color: #c4dbff!important;
+body {
+  background-color: #c4dbff !important;
 }
 
-.yourportaltext h1 
-{
+.yourportaltext h1 {
   font-size: 80px;
   color: rgb(122, 122, 122);
   margin-top: 100px;
   margin-left: 75px;
   text-align: left;
-  
 }
 
-.yourportaltext h2
-{
+.yourportaltext h2 {
   color: rgb(122, 122, 122);
   margin-top: 25px;
   margin-left: 85px;
   text-align: left;
 }
 
-  
-  .portalBox 
-  {
-    background: white;
-    padding: 20px;
-    /*border: 30px ridge #B2AC88;*/
-    margin-left:75px;
-    margin-bottom:50px;
-    height: 700px;
-    width: 1000px;
-    text-align: left;
-  }
+.portalBox {
+  background: #fff;
+  padding: 20px;
+  height: fit-content;
+  width: 90%;
+  margin: 50px auto;
+  text-align: left;
+}
 
-  .buttonGroup
-  {
-    float:left;
-    border-radius: 25px;
-    font-size: 20px;
-    text-align: left;
-    color: white;
-    margin-left:100px;
-    position:relative;
-    top:-700px;
-  }
+.buttonGroup {
+  width: 90%;
+  margin: 2rem auto;
+  position: relative;
+  text-align: left;
+  font-size: 20px;
+}
 
-  .buttonGroup button:hover 
-  {
-    background-color: #c4dbff;
-    cursor:pointer;
-    border:5px black;
-  }
+.buttonGroup a {
+  padding: 1rem;
+  margin-right: 1rem;
+  border-radius: 100px;
+  background: var(--darkblue);
+  color: #fff;
+  text-decoration: none;
+}
+
+.buttonGroup a:hover {
+  background-color: var(--lightblue);
+  cursor: pointer;
+}
