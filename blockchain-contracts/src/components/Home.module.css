@@ -4,7 +4,6 @@
   margin: 0;
   padding: 0;
   position: relative;
-  border: 1px solid red;
 }
 
 .wrapper {
@@ -14,11 +13,11 @@
   right: 0;
   top: 15%;
   margin: auto;
-  border: 1px solid red;
 }
 
 .contain {
   overflow-x: hidden;
+  background: #03c2fc;
 }
 
 /* Steps section */
@@ -31,25 +30,21 @@
 .arrow-container {
   position: relative;
   min-height: 500px;
-  border: 1px solid yellow;
 }
 
 .steps-container {
   width: 300px;
   position: absolute;
-  /* border: 1px solid blue; */
 }
 
 .steps-container > h2 {
   font-size: 2rem;
   width: fit-content;
-  /* border: 1px solid green; */
 }
 
 .steps-container > p {
   font-size: 1rem;
   width: fit-content;
-  /* border: 1px solid green; */
 }
 
 .step--one {
@@ -76,7 +71,4 @@
 .step--five {
   top: 0;
   right: 0;
-}
-
-.hello {
 }

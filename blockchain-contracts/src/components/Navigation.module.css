@@ -1,21 +1,25 @@
-
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: linear-gradient(90deg, rgba(104,144,203,1) 0%, rgba(113,164,219,1) 0%, rgba(177,217,224,1) 0%, rgba(196,219,255,1) 100%); ;
+  background-color: linear-gradient(
+    90deg,
+    rgba(104, 144, 203, 1) 0%,
+    rgba(113, 164, 219, 1) 0%,
+    rgba(177, 217, 224, 1) 0%,
+    rgba(196, 219, 255, 1) 100%
+  );
 }
 
 .login:hover {
-  background-color: #111; 
+  background-color: #111;
   color: white;
 }
 
 li {
   float: left;
   margin: 10px;
-  
 }
 
 /* Change the link color to #111 (black) on hover */
@@ -25,7 +29,7 @@ li a:hover {
   background-color: #b1d9e0;
 }
 
-button {
+.nav__button {
   margin: 10px;
   color: #b1d9e0;
   background: #4873b5;
@@ -35,7 +39,7 @@ button {
   border-radius: 30px;
 }
 
-button:hover {
+.nav__button:hover {
   transform: translateY(-3px);
   transition: all 0.5s;
   background: #b1d9e0;
