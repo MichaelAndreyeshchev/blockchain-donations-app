@@ -1,4 +1,4 @@
-ul{
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -9,10 +9,16 @@ ul{
   
   li a {
     display: block;
-    color: black;
+    color: #b1d9e0;
     text-align: center;
-    padding: 14px 30px;
     text-decoration: none;
+    padding: 14px 30px;
+    border: 1px solid #b1d9e0;
+    border-radius: 30px;
+  }
+
+  img a {
+    border: 1px solid #4873b5;
   }
   
   /* Change the link color to #111 (black) on hover */
