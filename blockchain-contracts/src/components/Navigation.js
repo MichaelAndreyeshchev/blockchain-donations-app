@@ -41,7 +41,7 @@ const Navigation = () => {
           <Link to="/portalpage">Portal</Link>
         </li>
         <li>
-          <Link to="/CreateCampaign">CreateCampaign</Link>
+          <Link to="/createcampaign">Create Campaign</Link>
         </li>
         <li style={{ float: 'right' }}>
             {isAuthenticated && (

@@ -77,3 +77,32 @@
     background-color: black; /* Green */
     color: white;
   }
+
+  .campaign__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+
+.campaign__tags {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.campaign__description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.campaign__goal {
+    display: flex;
+    align-tems: center;
+    justify-content: center;
+    padding: 5px;
+}

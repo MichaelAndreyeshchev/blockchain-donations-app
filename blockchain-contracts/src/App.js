@@ -18,6 +18,7 @@ import CreateCampaign from './components/CreateCampaign';
 import logOut from './components/logOut';
 import Profile from './components/Profile';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import CreateCampaign from './components/CreateCampaign';
 
 function App() {
     return (
@@ -41,6 +42,7 @@ function App() {
                 <Route exact path = '/newSignIn' component = {newSignIn}/>
                 <Route exact path = '/logOut' component = {logOut}/>
                 <Route exact path = '/Profile' component = {Profile}/>
+                <Route exact path='/createcampaign' component={CreateCampaign} />
             </Router>
             <Footer />
         </div>
