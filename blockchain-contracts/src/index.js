@@ -6,6 +6,11 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom';
 import { Auth0Provider } from '@auth0/auth0-react';
 
+window.React1 = require('react');
+require('react-dom');
+window.React2 = require('react');
+console.log(window.React1 === window.React2);
+
 ReactDOM.render(
   <BrowserRouter>
     <Auth0Provider
