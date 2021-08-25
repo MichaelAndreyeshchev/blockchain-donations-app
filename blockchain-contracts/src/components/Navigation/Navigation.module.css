@@ -46,14 +46,14 @@ li a:hover {
   color: #4873b5;
 }
 
-img {
+.nav__image {
   width: 50%;
   height: 50%;
   margin: 10px;
   border-radius: 50px;
 }
 
-img:hover {
+.nav__image:hover {
   transform: translateY(-3px);
   transition: all 0.5s;
 }
