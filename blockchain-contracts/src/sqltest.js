@@ -35,7 +35,7 @@ function queryDatabase() {
 
   // Read all rows from table
   const request = new Request(
-    `SELECT * FROM campaign_info`,
+    `SELECT * FROM discussion_board_info`,
     (err, rowCount) => {
       if (err) {
         console.error(err.message);
