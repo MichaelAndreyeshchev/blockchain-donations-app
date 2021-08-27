@@ -1,5 +1,5 @@
 import React, { PureComponent, useState } from 'react';
-import data from './data/DiscussionBoardData.json';
+import data from '../data/DiscussionBoardData.json';
 import { CommentSection } from 'react-comments-section';
 import 'react-comments-section/dist/index.css';
 import CustomInput from './CustomInput';

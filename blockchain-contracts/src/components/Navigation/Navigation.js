@@ -39,7 +39,7 @@ const Navigation = () => {
         {isAuthenticated && (
           <div className='profile__image' style={{ float: 'right' }}>
             <a className='profile__info' href='/accountinfo'>
-              <img src={user.picture} alt={user.name} />
+              <img src={user.picture} alt={user.name} class='nav__image' />
             </a>
           </div>
         )}

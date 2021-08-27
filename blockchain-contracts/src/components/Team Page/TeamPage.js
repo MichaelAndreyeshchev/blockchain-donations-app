@@ -1,5 +1,5 @@
 import TeamCSS from './TeamPage.module.css';
-import team from './data/team.json';
+import team from '../data/team.json';
 import React from 'react';
 
 const TeamPage = () => {
