@@ -21,7 +21,7 @@ contract Cryptonate {
 
     /// @notice Creates a new campaign
     /// @dev Dynamic array for _projectNames must be created in storage, not memory
-    constructor(string memory _endType, uint _endNumber, uint _minContribution, string[] memory _projectNames, address payable _charity) public {
+    constructor(string memory _endType, uint _endNumber, uint _minContribution, string[] memory _projectNames, address payable _charity) public payable {
         if(keccak256(abi.encodePacked((_endType))) == keccak256(abi.encodePacked(("Time")))){
             deadline = (block.timestamp + (_endNumber * 1 days));
         }else if(keccak256(abi.encodePacked((_endType))) == keccak256(abi.encodePacked(("Money")))){

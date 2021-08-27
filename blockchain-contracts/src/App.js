@@ -18,6 +18,7 @@ import CreateCampaign from './components/CreateCampaign';
 import logOut from './components/logOut';
 import Profile from './components/Profile';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Payment from './components/Payment';
 
 function App() {
     return (
@@ -42,6 +43,7 @@ function App() {
                 <Route exact path = '/logOut' component = {logOut}/>
                 <Route exact path = '/Profile' component = {Profile}/>
                 <Route exact path='/CreateCampaign' component={CreateCampaign} />
+                <Route exact path='/Payment' component={Payment} />
             </Router>
             <Footer />
         </div>

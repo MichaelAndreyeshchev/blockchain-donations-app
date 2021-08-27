@@ -32,6 +32,9 @@ const Navigation = () => {
         <li>
           <Link to='/contact'>Contact</Link>
         </li>
+        <li>
+          <Link to='/Payment'>Payment</Link>
+        </li>
 
         {isAuthenticated && (
           <div className='profile__image' style={{ float: 'right' }}>
