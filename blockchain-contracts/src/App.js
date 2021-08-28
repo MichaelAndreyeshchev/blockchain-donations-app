@@ -46,7 +46,6 @@ function App() {
         <Route exact path='/newSignIn' component={newSignIn} />
         <Route exact path='/logOut' component={logOut} />
         <Route exact path='/Profile' component={Profile} />
-        {/* <Route exact path='/CreateCampaign' component={CreateCampaign} /> */}
       </Router>
       <Footer />
     </div>
