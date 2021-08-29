@@ -28,3 +28,12 @@ export default function CreateCampaign(props) {
     </div>
   );
 }
+
+/* 
+  1. name of campaign
+  2. tags for campaing
+  3. tags for projects
+  4. date of end/unlimited
+  5. name of org or person
+  6. description
+*/
