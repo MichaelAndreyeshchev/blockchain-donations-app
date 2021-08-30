@@ -31,6 +31,7 @@
     "react-chartjs-2": "^3.0.4",
     "react-comments-section": "^1.0.7",
     "react-dom": "^17.0.2",
+    "react-hooks-helper": "^1.6.0",
     "react-infinite-scroll-component": "^6.1.0",
     "react-number-format": "^4.7.3",
     "react-particles-js": "^3.5.3",
