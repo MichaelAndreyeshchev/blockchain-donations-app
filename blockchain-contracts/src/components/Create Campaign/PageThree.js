@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import swal from 'sweetalert';
 import Button from '@material-ui/core/Button';
 import './PageThree.css';
+import bg from './bg3.svg';
 
 export const PageThree = ({ formData, setForm, navigation }) => {
   const [name, setName] = useState('');
@@ -37,6 +38,9 @@ export const PageThree = ({ formData, setForm, navigation }) => {
 
   return (
     <main className='multistep--form'>
+      <div className='form__image'>
+        <img src={bg} alt='' className='image' />
+      </div>
       <article className='form--container'>
         <h1 className='form__title'>Owner Credentials</h1>
         <div className='form-row'>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import './PageOne.css';
 import swal from 'sweetalert';
+import bg from './bg.svg';
 
 export const PageOne = ({ formData, setForm, navigation }) => {
   const [name, setName] = useState('');
@@ -35,6 +36,9 @@ export const PageOne = ({ formData, setForm, navigation }) => {
 
   return (
     <main className='multistep--form'>
+      <div className='form__image'>
+        <img src={bg} alt='' className='image' />
+      </div>
       <article className='form--container'>
         <h1 className='form__title'>Basic Information</h1>
         <div className='form-row'>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import swal from 'sweetalert';
 import Button from '@material-ui/core/Button';
 import './PageTwo.css';
+import bg from './bg2.svg';
 
 export const PageTwo = ({ formData, setForm, navigation }) => {
   const [date, setDate] = useState('');
@@ -33,6 +34,9 @@ export const PageTwo = ({ formData, setForm, navigation }) => {
 
   return (
     <main className='multistep--form'>
+      <div className='form__image'>
+        <img src={bg} alt='' className='image' />
+      </div>
       <article className='form--container'>
         <h1 className='form__title'>Expiration Date</h1>
         <div className='form-row' id='tab_two'>
