@@ -45,6 +45,7 @@ function App() {
         <Route exact path='/CreateCampaign' component={CreateCampaign} />
         <Route exact path='/newSignIn' component={newSignIn} />
         <Route exact path='/logOut' component={logOut} />
+        <Route exact path='/payment' component={Payment} />
         <Route exact path='/Profile' component={Profile} />
         {/* <Route exact path='/CreateCampaign' component={CreateCampaign} /> */}
       </Router>

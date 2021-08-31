@@ -54,10 +54,10 @@ export default function Payment() {
 
       const releaseFunds = async (t) => {
         t.preventDefault();
-        const gas = await cryptoContract.methods.releaseFunds(override).estimateGas();
-        const post = await cryptoContract.methods.releaseFunds(override).send({
-          from: account,
-          gas,
+        const newOverride = false;
+
+        const post = await cryptoContract.methods.releaseFunds(newOverride).send({
+          from: account
         });
 
         truffleAssert.eventEmitted(cryptoContract, 'FundsSent', (event) => {
@@ -78,6 +78,7 @@ export default function Payment() {
                 onChange={event => setVote(event.target.value)}
               />
             </label>
+            <br/>
             <label>
               Enter Donation Amount:
               <input
