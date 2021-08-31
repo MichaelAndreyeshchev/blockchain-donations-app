@@ -5,9 +5,7 @@ import './PageTwo.css';
 import bg from './bg2.svg';
 
 export const PageTwo = ({ formData, setForm, navigation }) => {
-  const [date, setDate] = useState('');
-  const [end, setEnd] = useState(false);
-  const [check, setCheck] = useState(false);
+  const { campaignDate, campaignIsExpired } = formData;
 
   const emptyInput = (field) => {
     swal({
@@ -21,11 +19,22 @@ export const PageTwo = ({ formData, setForm, navigation }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     var today = new Date();
-    var userDate = new Date(date);
+    var userDate = new Date(campaignDate);
 
-    if (end && date.length == 0) {
+    console.log('handle submit', campaignIsExpired);
+
+    if (campaignIsExpired === 'false') {
+      setForm({
+        target: {
+          name: 'campaignDate',
+          value: '',
+        },
+      });
+    }
+
+    if (campaignIsExpired === 'true' && campaignDate.length == 0) {
       emptyInput('Please enter your desired end date!');
-    } else if (end && userDate < today) {
+    } else if (campaignIsExpired === 'true' && userDate < today) {
       emptyInput('Please choose a valid date!');
     } else {
       navigation.next();
@@ -44,14 +53,11 @@ export const PageTwo = ({ formData, setForm, navigation }) => {
           <div className='form-holder'>
             <input
               type='radio'
-              name='time'
-              value='Yes'
+              value='false'
               id='campaign_date_forever'
-              onClick={() => {
-                setCheck(false);
-                setEnd(false);
-              }}
-              defaultChecked='true'
+              name='campaignIsExpired'
+              checked={campaignIsExpired === 'false'}
+              onChange={setForm}
             />
             <label htmlFor='' className='radio__label'>
               Yes
@@ -60,12 +66,10 @@ export const PageTwo = ({ formData, setForm, navigation }) => {
           <div className='form-holder'>
             <input
               type='radio'
-              name='time'
-              value='No'
-              onClick={() => {
-                setCheck(true);
-                setEnd(true);
-              }}
+              value='true'
+              name='campaignIsExpired'
+              checked={campaignIsExpired === 'true'}
+              onChange={setForm}
             />
             <label htmlFor='' className='radio__label'>
               No
@@ -75,14 +79,16 @@ export const PageTwo = ({ formData, setForm, navigation }) => {
         <div
           className='form-row'
           id='campaign_expired_date'
-          style={{ display: check ? 'block' : 'none' }}
+          style={{ display: campaignIsExpired === 'true' ? 'block' : 'none' }}
         >
           <label htmlFor=''>Campaign End Date</label>
           <input
             type='date'
             className='form-control'
             id='campaign_calender'
-            onChange={(e) => setDate(e.target.value)}
+            name='campaignDate'
+            value={campaignDate}
+            onChange={setForm}
           />
         </div>
         <div style={{ marginTop: '1rem' }}>

@@ -30,7 +30,9 @@ const defaultData = {
   campaignDescription: '',
   campaignTags: '',
   projectTags: '',
+  campaignIsExpired: 'false',
   campaignDate: '',
+  campaignIsOrganization: 'true',
   campaignOwner: '',
 };
 

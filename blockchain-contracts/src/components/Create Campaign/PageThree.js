@@ -5,8 +5,7 @@ import './PageThree.css';
 import bg from './bg3.svg';
 
 export const PageThree = ({ formData, setForm, navigation }) => {
-  const [name, setName] = useState('');
-  const [identity, setIdentity] = useState(true);
+  const { campaignIsOrganization, campaignOwner } = formData;
 
   function success() {
     swal({
@@ -28,14 +27,81 @@ export const PageThree = ({ formData, setForm, navigation }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (name.length < 1) {
-      emptyInput(`${identity ? 'organization' : ''} name`);
+    if (campaignOwner.length < 1) {
+      emptyInput(
+        `${campaignIsOrganization === 'true' ? 'organization' : ''} name`
+      );
     } else {
       success();
+
+      setForm({
+        target: {
+          name: 'campaignName',
+          value: '',
+        },
+      });
+
+      setForm({
+        target: {
+          name: 'campaignDescription',
+          value: '',
+        },
+      });
+
+      setForm({
+        target: {
+          name: 'campaignTags',
+          value: '',
+        },
+      });
+
+      setForm({
+        target: {
+          name: 'projectTags',
+          value: '',
+        },
+      });
+
+      setForm({
+        target: {
+          name: 'campaignIsExpired',
+          value: 'false',
+        },
+      });
+
+      setForm({
+        target: {
+          name: 'campaignDate',
+          value: '',
+        },
+      });
+
+      setForm({
+        target: {
+          name: 'campaignIsOrganization',
+          value: 'true',
+        },
+      });
+
+      setForm({
+        target: {
+          name: 'campaignOwner',
+          value: '',
+        },
+      });
+      // reset({
+      //   campaignName: '',
+      //   campaignDescription: '',
+      //   campaignTags: '',
+      //   projectTags: '',
+      //   campaignIsExpired: 'false',
+      //   campaignDate: '',
+      //   campaignIsOrganization: 'true',
+      //   campaignOwner: '',
+      // });
       navigation.next();
     }
   };
-
   return (
     <main className='multistep--form'>
       <div className='form__image'>
@@ -50,13 +116,11 @@ export const PageThree = ({ formData, setForm, navigation }) => {
           <div className='form-holder'>
             <input
               type='radio'
-              name='owner'
-              value='organization'
+              value='true'
               id='campaign_owner_button'
-              onClick={() => {
-                setIdentity(true);
-              }}
-              defaultChecked='true'
+              name='campaignIsOrganization'
+              checked={campaignIsOrganization === 'true'}
+              onChange={setForm}
             />
             <label htmlFor='' className='radio__label'>
               organization
@@ -65,11 +129,10 @@ export const PageThree = ({ formData, setForm, navigation }) => {
           <div className='form-holder'>
             <input
               type='radio'
-              name='owner'
-              value='individual'
-              onClick={() => {
-                setIdentity(false);
-              }}
+              value='false'
+              name='campaignIsOrganization'
+              checked={campaignIsOrganization === 'false'}
+              onChange={setForm}
             />
             <label htmlFor='' className='radio__label'>
               Individual
@@ -82,7 +145,9 @@ export const PageThree = ({ formData, setForm, navigation }) => {
             type='text'
             className='form-control'
             id='campaign_owner'
-            onChange={(e) => setName(e.target.value)}
+            name='campaignOwner'
+            value={campaignOwner}
+            onChange={setForm}
           />
         </div>
         <div style={{ marginTop: '1rem' }}>

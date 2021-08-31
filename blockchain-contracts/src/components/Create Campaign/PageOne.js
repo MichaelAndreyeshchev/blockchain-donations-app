@@ -5,10 +5,8 @@ import swal from 'sweetalert';
 import bg from './bg.svg';
 
 export const PageOne = ({ formData, setForm, navigation }) => {
-  const [name, setName] = useState('');
-  const [description, setDescription] = useState('');
-  const [campaignTags, setCampaignTags] = useState('');
-  const [projectTags, setProjectTags] = useState('');
+  const { campaignName, campaignDescription, campaignTags, projectTags } =
+    formData;
 
   const emptyInput = (field) => {
     swal({
@@ -21,9 +19,9 @@ export const PageOne = ({ formData, setForm, navigation }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (name.length < 1) {
+    if (campaignName.length < 1) {
       emptyInput('campaign name');
-    } else if (description.length < 1) {
+    } else if (campaignDescription.length < 1) {
       emptyInput('campaign description');
     } else if (campaignTags.length < 1) {
       emptyInput('campaign tags');
@@ -47,7 +45,10 @@ export const PageOne = ({ formData, setForm, navigation }) => {
             type='text'
             className='form-control'
             id='campaign_name'
-            onChange={(e) => setName(e.target.value)}
+            placeholder='Ex: Save the kids'
+            name='campaignName'
+            value={campaignName}
+            onChange={setForm}
           />
         </div>
         <div className='form-row'>
@@ -58,7 +59,9 @@ export const PageOne = ({ formData, setForm, navigation }) => {
             className='form-control'
             placeholder='Something about your mission and vision.'
             style={{ height: '149px' }}
-            onChange={(e) => setDescription(e.target.value)}
+            name='campaignDescription'
+            value={campaignDescription}
+            onChange={setForm}
           ></textarea>
         </div>
         <div className='form-row'>
@@ -68,7 +71,9 @@ export const PageOne = ({ formData, setForm, navigation }) => {
             className='form-control'
             placeholder='Technology, Research, Community'
             id='campaign_tags'
-            onChange={(e) => setCampaignTags(e.target.value)}
+            name='campaignTags'
+            value={campaignTags}
+            onChange={setForm}
           />
         </div>
         <div className='form-row'>
@@ -78,7 +83,9 @@ export const PageOne = ({ formData, setForm, navigation }) => {
             className='form-control'
             placeholder='Building well in California'
             id='project_tags'
-            onChange={(e) => setProjectTags(e.target.value)}
+            name='projectTags'
+            value={projectTags}
+            onChange={setForm}
           />
         </div>
         <Button
