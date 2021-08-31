@@ -6,18 +6,83 @@
   position: relative;
 }
 
+.container:nth-child(2) {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+  display: flex;
+}
+
 .wrapper {
   width: 100%;
+  max-width: 600px;
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 15%;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
   margin: auto;
 }
 
 .contain {
   overflow-x: hidden;
   background: #03c2fc;
+}
+
+.container__row {
+  width: 100%;
+}
+
+.container__column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.container__title {
+  font-size: 4rem;
+  justify-self: flex-start;
+  color: #fff;
+}
+
+.container__button {
+  width: 100%;
+  max-width: 250px;
+  padding: 1em;
+  border-radius: 100px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+}
+
+.button--dark {
+  background: #181818;
+}
+
+.container__button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  font-size: 1.3rem;
+  transition: 0.5s;
+}
+
+.container__button span:after {
+  content: '\00bb';
+  font-size: 2rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-55%);
+  right: -20px;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.container__button:hover span {
+  padding-right: 25px;
+}
+
+.container__button:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 
 /* Steps section */

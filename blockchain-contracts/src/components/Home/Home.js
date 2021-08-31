@@ -2,6 +2,7 @@ import React from 'react';
 import ParticleBackground from './Particles';
 import HomeCSS from './Home.module.css';
 import Xarrow from 'react-xarrows';
+import image from './donate.svg';
 
 const Home = () => {
   return (
@@ -20,60 +21,41 @@ const Home = () => {
               </p>
               <button
                 type='button'
-                className='btn bg-dark'
-                style={{ color: 'white' }}
+                className={
+                  HomeCSS['container__button'] + ' ' + HomeCSS['button--dark']
+                }
               >
-                Create Account
+                <span>Create Account</span>
               </button>
             </div>
-
-            {/* <div className='col d-flex justify-content-center'>
-              <img
-                className='img-fluid rounded mb-4 mb-lg-0'
-                src={'./placeholder.jpg'}
-                alt=''
-              />
-            </div> */}
           </div>
         </section>
 
-        {/* Top Campaigns Section */}
+        {/* Top Campaigns Section className='row my-5' */}
         <section className={HomeCSS.container}>
-          <div className='row my-5'>
+          <div className={'row my-5 ' + HomeCSS['container__row']}>
             <div className='col d-flex justify-content-center  '>
               <img
                 className='img-fluid rounded mb-4 mb-lg-0'
-                src={'./placeholder.jpg'}
+                src={image}
                 alt=''
               />
             </div>
-            <div className='col  text-center '>
-              <h2 className='mt-3'>Top Campaigns</h2>
+            <div className={'col  text-center ' + HomeCSS['container__column']}>
+              <h2 className={HomeCSS['container__title']}>Top Campaigns</h2>
               <div>
-                <button
-                  type='button'
-                  className='row btn bg-dark mt-2 w-25'
-                  style={{ color: 'white' }}
-                >
-                  Charity 1
+                <button type='button' className={HomeCSS['container__button']}>
+                  <span>Charity 1 </span>
                 </button>
               </div>
               <div>
-                <button
-                  type='button'
-                  className='row btn bg-dark mt-2 w-25'
-                  style={{ color: 'white' }}
-                >
-                  Charity 2
+                <button type='button' className={HomeCSS['container__button']}>
+                  <span>Charity 2 </span>
                 </button>
               </div>
               <div>
-                <button
-                  type='button'
-                  className='row btn bg-dark mt-2 w-25 '
-                  style={{ color: 'white' }}
-                >
-                  Charity 3
+                <button type='button' className={HomeCSS['container__button']}>
+                  <span>Charity 3 </span>
                 </button>
               </div>
             </div>
