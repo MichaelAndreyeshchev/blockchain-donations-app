@@ -8,18 +8,6 @@ import { makeStyles } from '@material-ui/styles';
 const Navigation = () => {
   const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
   
-  function createUser() {
-    let user_name = user.nickname;
-    let password = user.password;
-    fetch('http://localhost:3000/portalpage', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({user_name, password}),
-    })
-  }
-
   return (
     <nav>
       <ul className='campaign__navbar'>
@@ -75,8 +63,6 @@ const Navigation = () => {
             Logout
           </button>
         )}
-
-        {isAuthenticated && createUser()}
       </ul>
     </nav>
   );
