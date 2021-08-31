@@ -46,11 +46,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.3",
     "react-transition-group": "^4.4.2",
-<<<<<<< HEAD
-    "sequelize": "^6.6.5",
-=======
     "react-xarrows": "^2.0.2",
->>>>>>> 91ea752f20cbebfa0506a8c9f56e6a6c3b761425
     "solc": "^0.8.7-fixed",
     "sweetalert": "^2.1.2",
     "tedious": "^11.4.0",
