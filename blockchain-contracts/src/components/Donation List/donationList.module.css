@@ -1,0 +1,85 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #4873b5;
+  }
+  
+  
+  li a {
+    display: block;
+    color: #b1d9e0;
+    text-align: center;
+    text-decoration: none;
+    padding: 14px 30px;
+    border: 1px solid #b1d9e0;
+    border-radius: 30px;
+  }
+
+  img a {
+    border: 1px solid #4873b5;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  
+  body{
+    margin:0 auto;
+  }
+  
+  #projectbtn{
+    position:relative;
+  }
+  
+  #header{
+    display:flex;
+    align-items:center;
+  }
+  
+  #list{
+    justify-content: space-around;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  
+  *{
+    box-sizing: border-box;
+  }
+  
+  div.pagination{
+    bottom: 3rem;
+    left: 5rem;
+    position: fixed;
+    background-color:#5c915c;
+    color:white
+  }
+
+  .formcontrolfeedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem !important;
+    text-align: center;
+    pointer-events: none;
+    
+}
+
+#formcontrol {
+  padding-left: 2.375rem;
+}
+
+#container{
+  background-color: #c4dbff;
+  height: 90vh;
+}
+
+h1{
+  color: white;
+}
+
+/*--darkgreen: #5c915c;*/

@@ -1,0 +1,29 @@
+{
+    "donations":[
+        {
+            "title": "HelpKids",
+            "Funds": 20000000,
+            "pageUrl": "xxxxxxx",
+            "category": "A"
+
+        },
+        {
+            "title": "HelpGoodChildren",
+            "Funds": 10000000,
+            "pageUrl": "xxxxxxx",
+            "category": "B"
+        },
+        {
+            "title": "HelpTeens",
+            "Funds": 50000,
+            "pageUrl": "xxxxxxx",
+            "category": "A"
+        },
+        {
+            "title": "HelpChildren",
+            "Funds": 1000,
+            "pageUrl": "xxxxxxx",
+            "category": "C"
+        }
+    ]
+}

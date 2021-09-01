@@ -1,0 +1,14 @@
+:root {
+  --background: #4873b5;
+  --textColor: white;
+}
+
+.footer {
+  position: absolute;
+  width: 100%;
+  background-color: var(--background);
+  color: var(--textColor);
+  text-align: center;
+  padding-top: 12px;
+  height: 3.5rem;
+}

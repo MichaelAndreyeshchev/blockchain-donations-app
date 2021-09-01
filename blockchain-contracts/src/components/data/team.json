@@ -1,0 +1,14 @@
+{
+  "members": [
+    { "name": "Aryan Shah", "role": "Project Leader/Team Leader" },
+    { "name": "Michael Andrev", "role": "Project Leader/Team Leader" },
+    { "name": "Chan Tommy", "role": "Software Enginneer Intern" },
+    { "name": "Jeanmarc Duong", "role": "Full Stack Web Development Intern" },
+    { "name": "Joseph Haryanto", "role": "Full Stack Web Development Intern" },
+    { "name": "Benjamin Theurich", "role": "Software Engineer Intern" },
+    { "name": "Joseph Jun", "role": "Software Engineering Intern" },
+    { "name": "Connor Michalec", "role": "Software Engineering Intern" },
+    { "name": "William Absey", "role": "Machine Learning Intern" },
+    { "name": "Faizan Ahmed", "role": "Machine Learning Intern" }
+  ]
+}

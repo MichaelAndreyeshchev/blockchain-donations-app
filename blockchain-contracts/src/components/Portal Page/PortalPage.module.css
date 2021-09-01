@@ -1,0 +1,53 @@
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #c4dbff !important;
+}
+
+.yourportaltext h1 {
+  font-size: 80px;
+  color: rgb(122, 122, 122);
+  margin-top: 100px;
+  margin-left: 75px;
+  text-align: left;
+}
+
+.yourportaltext h2 {
+  color: rgb(122, 122, 122);
+  margin-top: 25px;
+  margin-left: 85px;
+  text-align: left;
+}
+
+.portalBox {
+  background: #fff;
+  padding: 20px;
+  height: fit-content;
+  width: 90%;
+  margin: 50px auto;
+  text-align: left;
+}
+
+.buttonGroup {
+  width: 90%;
+  margin: 2rem auto;
+  position: relative;
+  text-align: left;
+  font-size: 20px;
+}
+
+.buttonGroup a {
+  padding: 1rem;
+  margin-right: 1rem;
+  border-radius: 100px;
+  background: var(--darkblue);
+  color: #fff;
+  text-decoration: none;
+}
+
+.buttonGroup a:hover {
+  background-color: var(--lightblue);
+  cursor: pointer;
+}

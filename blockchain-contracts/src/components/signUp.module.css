@@ -1,0 +1,19 @@
+#signup{
+    background: linear-gradient(to right,rgb(255, 255, 255,0), rgb(237, 237, 237,50));
+   border: 0;
+   padding: 2rem 4rem 2rem 4rem;
+    border-radius: 25px;
+     box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   }
+   
+   #btn::before{
+     content:'\A';
+     white-space: pre;
+   }
+   
+   #container{
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  
+   
